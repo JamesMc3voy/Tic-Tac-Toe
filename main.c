@@ -4,8 +4,6 @@
 int main()
 {
     printf("Hello world!\n");
-    //Test test now by malek Hiii
-    //practice test for James
-    // BIG DADDY 69
+
     return 0;
 }
