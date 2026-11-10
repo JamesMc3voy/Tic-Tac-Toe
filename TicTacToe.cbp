@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Board.h" />
+		<Unit filename="Buttons.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Buttons.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -22,7 +22,7 @@ int main()
         BeginDrawing(); //enbled drawing
         ClearBackground(RAYWHITE); // cleared background
 
-        BoardButtons();
+        BoardButtons();//Call squares for each box on the board
 
         DrawBoard(start_x_vert,start_y_vert,start_x_horiz,start_y_horiz); //called board function to draw the board
 
