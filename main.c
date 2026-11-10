@@ -1,9 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include<raylib.h>
 
 int main()
 {
-    printf("Hello world!\n");
-    //Test again
+
+    InitWindow(900,900,"Tic Tac Toe");
+
+    while(!WindowShouldClose())
+    {
+        BeginDrawing();
+        ClearBackground(RAYWHITE);
+
+        EndDrawing();
+    }
+    CloseWindow();
+
     return 0;
 }
