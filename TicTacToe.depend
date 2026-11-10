@@ -1,3 +1,14 @@
 # depslib dependency file v1.0
 1794244419 source:c:\users\james\documents\github\tic-tac-toe\test.c
 
+1794302095 source:c:\users\james\documents\github\tic-tac-toe\main.c
+	<stdio.h>
+	<stdlib.h>
+	<raylib.h>
+	"Board.h"
+
+1794302229 c:\users\james\documents\github\tic-tac-toe\board.h
+
+1794302284 source:c:\users\james\documents\github\tic-tac-toe\board.c
+	<raylib.h>
+
