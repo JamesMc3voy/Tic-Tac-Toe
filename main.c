@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include<raylib.h>
+
+#include <raylib.h>
 
 #include"Board.h"
+#include"Buttons.h"
 
 int main()
 {
@@ -20,11 +22,12 @@ int main()
         BeginDrawing(); //enbled drawing
         ClearBackground(RAYWHITE); // cleared background
 
+        BoardButtons();
+
         DrawBoard(start_x_vert,start_y_vert,start_x_horiz,start_y_horiz); //called board function to draw the board
 
         EndDrawing();
     }
     CloseWindow();
-
     return 0;
 }
