@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
 1794244419 source:c:\users\james\documents\github\tic-tac-toe\test.c
 
-1794335836 source:c:\users\james\documents\github\tic-tac-toe\main.c
+1794397121 source:c:\users\james\documents\github\tic-tac-toe\main.c
 	<stdio.h>
 	<stdlib.h>
 	<raylib.h>
@@ -13,10 +13,12 @@
 1794335834 source:c:\users\james\documents\github\tic-tac-toe\board.c
 	<raylib.h>
 
-1794335534 source:c:\users\james\documents\github\tic-tac-toe\buttons.c
+1794397839 source:c:\users\james\documents\github\tic-tac-toe\buttons.c
 	<raylib.h>
+	"Buttons.h"
 
-1794335509 c:\users\james\documents\github\tic-tac-toe\buttons.h
+1794397894 c:\users\james\documents\github\tic-tac-toe\buttons.h
+	<raylib.h>
 
 1794391991 source:c:\users\matth\onedrive\documents\github\tic-tac-toe\board.c
 	<raylib.h>

@@ -17,12 +17,16 @@ int main()
     //created raylib window, size 900x900  // test for matthew
     InitWindow(900,900,"Tic Tac Toe");
 
+    BoardSquares Buttons[n*n];
+
+    BoardButtons(Buttons);//Call squares for each box on the board
+
     while(!WindowShouldClose())
     {
         BeginDrawing(); //enbled drawing
         ClearBackground(RAYWHITE); // cleared background
 
-        BoardButtons();//Call squares for each box on the board
+        DrawBoardButtons(Buttons);
 
         DrawBoard(start_x_vert,start_y_vert,start_x_horiz,start_y_horiz); //called board function to draw the board
 
