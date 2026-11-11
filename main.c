@@ -14,7 +14,7 @@ int main()
     int start_x_horiz = 100;
     int start_y_horiz = 200;
 
-    //created raylib window, size 900x900
+    //created raylib window, size 900x900  // hello
     InitWindow(900,900,"Tic Tac Toe");
 
     while(!WindowShouldClose())
