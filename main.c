@@ -5,10 +5,8 @@
 
 #include"Board.h"
 #include"Buttons.h"
+#include"MouseClicks.h"
 
-
-
-//test again sorry
 int main()
 {
     //Co-ordibnates for the top left of the board
@@ -16,22 +14,24 @@ int main()
     int start_y_vert = 100;
     int start_x_horiz = 100;
     int start_y_horiz = 200;
+    int n =3;
 
     //created raylib window, size 900x900  // test for matthew
-    InitWindow(900,900,"Tic Tac Toe");
+    InitWindow(1000,900,"Tic Tac Toe");
+    BoardSquares BoardSize[2];
+    BoardSquares Buttons[Max_N*Max_N];
 
-    BoardSquares Buttons[n*n];
-
-    BoardButtons(Buttons);//Call squares for each box on the board
+    BoardButtons(Buttons,n);//Call squares for each box on the board
+    BoardSizeButtons(BoardSize);
 
     while(!WindowShouldClose())
     {
+        BoardSizeSelect(BoardSize,Buttons,&n);// call the fuction change board size
         BeginDrawing(); //enbled drawing
         ClearBackground(RAYWHITE); // cleared background
-
-        DrawBoardButtons(Buttons);
-
-        DrawBoard(start_x_vert,start_y_vert,start_x_horiz,start_y_horiz); //called board function to draw the board
+        DrawBoardButtons(Buttons,n);
+        DrawBoard(start_x_vert,start_y_vert,start_x_horiz,start_y_horiz,n); //called board function to draw the board
+        DrawBoardSizeButtons(BoardSize);//draw the size selection Buttons
 
         EndDrawing();
     }

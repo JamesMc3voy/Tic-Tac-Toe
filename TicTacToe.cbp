@@ -39,6 +39,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Buttons.h" />
+		<Unit filename="MouseClicks.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="MouseClicks.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
