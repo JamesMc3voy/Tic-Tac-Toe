@@ -1,19 +1,20 @@
 # depslib dependency file v1.0
 1794244419 source:c:\users\james\documents\github\tic-tac-toe\test.c
 
-1794666017 source:c:\users\james\documents\github\tic-tac-toe\main.c
+1794671923 source:c:\users\james\documents\github\tic-tac-toe\main.c
 	<stdio.h>
 	<stdlib.h>
 	<raylib.h>
 	"Board.h"
 	"Buttons.h"
+	"MouseClicks.h"
 
-1794664433 c:\users\james\documents\github\tic-tac-toe\board.h
+1794671143 c:\users\james\documents\github\tic-tac-toe\board.h
 
-1794667696 source:c:\users\james\documents\github\tic-tac-toe\board.c
+1794671098 source:c:\users\james\documents\github\tic-tac-toe\board.c
 	<raylib.h>
 
-1794667794 source:c:\users\james\documents\github\tic-tac-toe\buttons.c
+1794671231 source:c:\users\james\documents\github\tic-tac-toe\buttons.c
 	<raylib.h>
 	"Buttons.h"
 
@@ -26,6 +27,9 @@
 1794391991 source:c:\users\matth\onedrive\documents\github\tic-tac-toe\buttons.c
 	<raylib.h>
 
-1794668813 source:c:\users\james\documents\github\tic-tac-toe\mouseclicks.c
+1794671768 source:c:\users\james\documents\github\tic-tac-toe\mouseclicks.c
 	"Buttons.h"
+	"Board.h"
+
+1794671746 c:\users\james\documents\github\tic-tac-toe\mouseclicks.h
 

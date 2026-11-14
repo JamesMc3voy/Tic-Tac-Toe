@@ -15,6 +15,7 @@ int main()
     int start_x_horiz = 100;
     int start_y_horiz = 200;
     int n =3;
+    int turn = 1;
 
     //created raylib window, size 900x900  // test for matthew
     InitWindow(1000,900,"Tic Tac Toe");
@@ -27,9 +28,12 @@ int main()
     while(!WindowShouldClose())
     {
         BoardSizeSelect(BoardSize,Buttons,&n);// call the fuction change board size
+
         BeginDrawing(); //enbled drawing
         ClearBackground(RAYWHITE); // cleared background
-        DrawBoardButtons(Buttons,n);
+
+        DrawBoardButtons(Buttons,n);//call the funtion to draw the buttons for the user to choose
+        GameSquareSelect(Buttons, n, &turn);//call the funtion to check if a box was chosen
         DrawBoard(start_x_vert,start_y_vert,start_x_horiz,start_y_horiz,n); //called board function to draw the board
         DrawBoardSizeButtons(BoardSize);//draw the size selection Buttons
 

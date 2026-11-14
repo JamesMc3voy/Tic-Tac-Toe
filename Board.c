@@ -11,15 +11,15 @@ void DrawBoard(int start_x_vert,int start_y_vert,int start_x_horiz,int start_y_h
     }
 }
 
-void DrawX(int centre_x, int Centre_y)//Draw X
+void DrawX(int Centre_x, int Centre_y)//Draw X
 {
     //First Diagnol for X
-    DrawLineEx((Vector2){centre_x-20,Centre_y-20},(Vector2){centre_x +20, Centre_y+20}, 5, RED);
+    DrawLineEx((Vector2){Centre_x-20,Centre_y-20},(Vector2){Centre_x +20, Centre_y+20}, 5, RED);
     //Second diagnol for x
-    DrawLineEx((Vector2){centre_x-20,Centre_y+20},(Vector2){centre_x +20, Centre_y-20}, 5, RED);
+    DrawLineEx((Vector2){Centre_x-20,Centre_y+20},(Vector2){Centre_x +20, Centre_y-20}, 5, RED);
 }
 
-void DrawO(int centre_x, int Centre_y)//Draw O
+void DrawO(int Centre_x, int Centre_y)//Draw O
 {
-    DrawRing((Vector2){centre_x,Centre_y},25,20,0,360,64, BLUE);
+    DrawRing((Vector2){Centre_x,Centre_y},25,20,0,360,64, BLUE);
 }

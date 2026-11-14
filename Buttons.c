@@ -17,8 +17,6 @@ void DrawBoardButtons(BoardSquares Buttons[],int n)
     for(int k = 0; k<n*n; k++)
     {
         DrawRectangleRec(Buttons[k].box,WHITE);//Draw white Squares between the boxes of the board
-        int Centre_x = Buttons[k].box.x +50;//Determine the centre of the boxes
-        int Centre_y = Buttons[k].box.y +50;
     }
 }//prints row by column
 
