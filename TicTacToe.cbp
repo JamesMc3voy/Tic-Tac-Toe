@@ -43,6 +43,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="MouseClicks.h" />
+		<Unit filename="Winner.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Winner.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
