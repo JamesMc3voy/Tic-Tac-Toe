@@ -11,10 +11,10 @@ typedef struct
     int state; // 0 is empty, 1 is x, 2 is o
 }BoardSquares;
 
-void BoardButtons(BoardSquares Buttons[]);
+void BoardButtons(BoardSquares Buttons[]);//create the squares
 
-void DrawBoardButtons(BoardSquares Buttons[]);
+void DrawBoardButtons(BoardSquares Buttons[]);//draw the squares
 
-//void BoardSizeButtons(void);
+//void BoardSizeButtons();
 
 #endif
