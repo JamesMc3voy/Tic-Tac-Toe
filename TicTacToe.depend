@@ -10,7 +10,11 @@
 	"MouseClicks.h"
 	"Winner.h"
 
+
 1794757159 c:\users\james\documents\github\tic-tac-toe\board.h
+
+1794759444 c:\users\james\documents\github\tic-tac-toe\board.h
+
 
 1794671098 source:c:\users\james\documents\github\tic-tac-toe\board.c
 	<raylib.h>
@@ -19,7 +23,11 @@
 	<raylib.h>
 	"Buttons.h"
 
+
 1794757159 c:\users\james\documents\github\tic-tac-toe\buttons.h
+
+1794759444 c:\users\james\documents\github\tic-tac-toe\buttons.h
+
 	<raylib.h>
 
 1794391991 source:c:\users\matth\onedrive\documents\github\tic-tac-toe\board.c
