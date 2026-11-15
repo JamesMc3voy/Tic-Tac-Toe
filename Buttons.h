@@ -3,8 +3,6 @@
 
 #include <raylib.h>
 
-#define Max_N 4
-
 typedef struct
 {
     Rectangle box;

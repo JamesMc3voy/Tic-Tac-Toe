@@ -1,4 +1,4 @@
-#ifndef BOARD_H
+#ifndef BOARD_H // prevents the header files from being inlcuded more than once
 #define BOARD_H
 
 void DrawBoard(int start_x_vert, int start_y_vert,int start_x_horiz,int start_y_horiz,int n);//initialise the Function

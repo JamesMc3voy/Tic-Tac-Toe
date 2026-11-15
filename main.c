@@ -3,6 +3,7 @@
 
 #include <raylib.h>
 
+
 #include"Board.h"
 #include"Buttons.h"
 #include"MouseClicks.h"
@@ -11,6 +12,30 @@
 int main()
 {
     //Co-ordibnates for the top left of the board
+
+//include headers
+#include "Board.h"
+#include "Buttons.h"
+#include "MouseClicks.h"
+#include "Winner.h"
+#include "ui.h"
+
+int main()
+{
+    // 1. Run your console UI menu first!
+    int choice = show_main_menu();
+
+    if (choice == 5) {
+        printf("Quitting game.\n");
+        return 0;
+    }
+
+    int board_choice = choose_board_size(); // Returns 3 or 4
+    int n = board_choice;
+
+    // 2. Now launch the Raylib graphical window with the chosen settings
+    //co ordinates for top left of board
+
     int start_x_vert = 200;
     int start_y_vert = 100;
     int start_x_horiz = 100;
@@ -22,7 +47,11 @@ int main()
     //created raylib window, size 900x900  // test for matthew
     InitWindow(1000,900,"Tic Tac Toe");
     BoardSquares BoardSize[2];
+
     BoardSquares Buttons[Max_N*Max_N];
+
+    BoardSquares Buttons[4 * 4]; // this is the max amount of squares we can have
+
 
     BoardButtons(Buttons,n);//Call squares for each box on the board
     BoardSizeButtons(BoardSize);

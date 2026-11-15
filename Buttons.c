@@ -18,7 +18,7 @@ void DrawBoardButtons(BoardSquares Buttons[],int n)
     {
         DrawRectangleRec(Buttons[k].box,WHITE);//Draw white Squares between the boxes of the board
     }
-}//prints row by column
+}//prints column by row
 
 
 void BoardSizeButtons(BoardSquares BoardSize[])//create the squares
