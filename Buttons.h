@@ -3,7 +3,7 @@
 
 #include <raylib.h>
 
-#define n 3
+#define Max_N 4
 
 typedef struct
 {
@@ -11,10 +11,12 @@ typedef struct
     int state; // 0 is empty, 1 is x, 2 is o
 }BoardSquares;
 
-void BoardButtons(BoardSquares Buttons[]);
+void BoardButtons(BoardSquares Buttons[],int n);//create the squares
 
-void DrawBoardButtons(BoardSquares Buttons[]);
+void DrawBoardButtons(BoardSquares Buttons[],int n);//draw the squares
 
-//void BoardSizeButtons(void);
+void BoardSizeButtons(BoardSquares BoardSize[]);//create the squares to choose board size
+
+void DrawBoardSizeButtons(BoardSquares BoardSize[]);// draw the buttons to choose size of the board
 
 #endif
