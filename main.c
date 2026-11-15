@@ -3,16 +3,6 @@
 
 #include <raylib.h>
 
-
-#include"Board.h"
-#include"Buttons.h"
-#include"MouseClicks.h"
-#include"Winner.h"
-
-int main()
-{
-    //Co-ordibnates for the top left of the board
-
 //include headers
 #include "Board.h"
 #include "Buttons.h"
@@ -35,12 +25,11 @@ int main()
 
     // 2. Now launch the Raylib graphical window with the chosen settings
     //co ordinates for top left of board
-
     int start_x_vert = 200;
     int start_y_vert = 100;
     int start_x_horiz = 100;
     int start_y_horiz = 200;
-    int n =3;
+    //int n =3;//line 24 board choice
     int turn = 1;
     int winner; //0 draw, 1 player 1 and 2 is player 2, 4= no outcome yet
 
@@ -48,7 +37,6 @@ int main()
     InitWindow(1000,900,"Tic Tac Toe");
     BoardSquares BoardSize[2];
 
-    BoardSquares Buttons[Max_N*Max_N];
 
     BoardSquares Buttons[4 * 4]; // this is the max amount of squares we can have
 
