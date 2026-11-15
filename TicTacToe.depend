@@ -26,3 +26,25 @@
 1794391991 source:c:\users\matth\onedrive\documents\github\tic-tac-toe\buttons.c
 	<raylib.h>
 
+1794699831 source:c:\university\year 2\prog - project\tictactoe\tic-tac-toe\board.c
+	<raylib.h>
+
+1794699831 source:c:\university\year 2\prog - project\tictactoe\tic-tac-toe\buttons.c
+	<raylib.h>
+	"Buttons.h"
+
+1794699831 c:\university\year 2\prog - project\tictactoe\tic-tac-toe\buttons.h
+	<raylib.h>
+
+1794701614 source:c:\university\year 2\prog - project\tictactoe\tic-tac-toe\main.c
+	<stdio.h>
+	"ui.h"
+
+1794699831 c:\university\year 2\prog - project\tictactoe\tic-tac-toe\board.h
+
+1794701801 c:\university\year 2\prog - project\tictactoe\tic-tac-toe\ui.h
+
+1794702041 source:c:\university\year 2\prog - project\tictactoe\tic-tac-toe\ui.c
+	<stdio.h>
+	"ui.h"
+
