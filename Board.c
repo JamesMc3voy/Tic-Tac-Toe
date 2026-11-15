@@ -4,7 +4,7 @@ void DrawBoard(int start_x_vert,int start_y_vert,int start_x_horiz,int start_y_h
 {
     for(int i = 0; i<n-1; i++)// change 3 to n when buutons for 3x3 or 4x4 board are up and working
     {
-        //Vertical Lines - DrawlineEx with start and end co-ordinates, line thickness and colour for both vertical and horizontal lines
+        //Vertical Lines  line thickness and colour for both vertical and horizontal lines
         DrawLineEx((Vector2){start_x_vert + 100*i,start_y_vert},(Vector2){start_x_vert +100*i,start_y_vert +100*n},5,BLACK);
         //Horizontal Lines
         DrawLineEx((Vector2){start_x_horiz,start_y_horiz+100*i},(Vector2){start_x_horiz +100*n,start_y_horiz+100*i},5, BLACK);
@@ -13,9 +13,9 @@ void DrawBoard(int start_x_vert,int start_y_vert,int start_x_horiz,int start_y_h
 
 void DrawX(int Centre_x, int Centre_y)//Draw X
 {
-    //First Diagnol for X
+    //First Diagl for X
     DrawLineEx((Vector2){Centre_x-20,Centre_y-20},(Vector2){Centre_x +20, Centre_y+20}, 5, RED);
-    //Second diagnol for x
+    //Secnd diagnol for x
     DrawLineEx((Vector2){Centre_x-20,Centre_y+20},(Vector2){Centre_x +20, Centre_y-20}, 5, RED);
 }
 
