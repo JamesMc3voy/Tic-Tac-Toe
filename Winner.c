@@ -13,14 +13,22 @@ void CheckWinner3x3(BoardSquares Buttons[], int n, int *winner)
         int square2row = Buttons[i+3].state;
         int square3row = Buttons[i+6].state;
 
-        if(square1col !=0 && square1col == square2col && square2col == square3col)
+       if(square1col != 0 && square1col == square2col && square2col == square3col)
         {
-            *winner = (square1col == 1)? 1:2;
+            if (square1col == 1) {
+                *winner = 1;
+            } else {
+                *winner = 2;
+            }
         }
 
-        if(square1row!=0 && square1row == square2row && square2row == square3row)
+        if(square1row != 0 && square1row == square2row && square2row == square3row)
         {
-             *winner = (square1col == 1)? 1:2;
+            if (square1row == 1) {
+                *winner = 1;
+            } else {
+                *winner = 2;
+            }
         }
     }
 
