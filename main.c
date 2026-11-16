@@ -24,8 +24,13 @@ int main()
     int turn = 1;
     int winner = 4;                            //I Maintained your code to be 99.9% the same so all your logic is the same - malek
 
+
     BoardSquares BoardSize[2];
     BoardSquares Buttons[Max_N * Max_N];
+
+    //created raylib window, size 900x900  // test for matthew agian
+    InitWindow(900,900,"Tic Tac Toe");
+
 
     BoardButtons(Buttons, n);
     BoardSizeButtons(BoardSize);
