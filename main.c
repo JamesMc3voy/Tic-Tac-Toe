@@ -37,6 +37,13 @@ int main()
     InitWindow(1000,900,"Tic Tac Toe");
     BoardSquares BoardSize[2];
 
+    BoardSquares Buttons[Max_N * Max_N];
+    BoardSquares players[2]; // only two buttons to choose from
+
+    //created raylib window, size 900x900
+    InitWindow(1000,900,"Tic Tac Toe");
+
+
 
     BoardSquares Buttons[4 * 4]; // this is the max amount of squares we can have
 
@@ -54,11 +61,25 @@ int main()
 
         DrawBoardButtons(Buttons,n);//call the funtion to draw the buttons for the user to choose
 
+
         GameSquareSelect(Buttons, n, &turn);//call the funtion to check if a box was chosen
+
+        BoardSizeSelect(BoardSize, Buttons, &n);
+        SelectPlayerButtons(players);
+
 
         DrawBoard(start_x_vert,start_y_vert,start_x_horiz,start_y_horiz,n); //called board function to draw the board
 
+
         DrawBoardSizeButtons(BoardSize);//draw the size selection Buttons
+
+            DrawBoardButtons(Buttons, n);
+            GameSquareSelect(Buttons, n, &turn);
+            DrawBoard(start_x_vert, start_y_vert, start_x_horiz, start_y_horiz, n);
+            DrawBoardSizeButtons(BoardSize);
+            DrawSelectPlayerButtons(players);
+            CheckWinner3x3(Buttons, n, &winner);
+
 
         CheckWinner3x3(Buttons, n, &winner);
 

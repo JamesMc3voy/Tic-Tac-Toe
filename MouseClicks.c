@@ -44,3 +44,13 @@ void GameSquareSelect(BoardSquares Buttons[],int n,int *turn)//check eack box on
         }
     }
 }
+
+void PlayerSelect(BoardSquares players[],int *p)
+{
+    if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+        {
+            Vector2 Cursor = GetMousePosition();
+            if (CheckCollisionPointRec(Cursor, players[0].box));
+            if (CheckCollisionPointRec(Cursor, players[1].box));
+        }
+}

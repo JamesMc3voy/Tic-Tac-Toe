@@ -39,3 +39,22 @@ void DrawBoardSizeButtons(BoardSquares BoardSize[])//draw the buttons for the si
         DrawText(Labels[i],BoardSize[i].box.x + 25, BoardSize[i].box.y +12, 24, WHITE);//write the text for the box
     }
 }
+
+void SelectPlayerButtons(BoardSquares players[])
+{
+    for(int i =0; i<2; i++)
+    {
+        players[i].box = (Rectangle){600 + 100*i*2,200,100,50};
+        players[i].state = 0;
+    }
+}
+
+void DrawSelectPlayerButtons(BoardSquares players[])
+{
+    const char *Labels[2] = {"Player","Bot"};//possible texts for either box
+    for(int i =0; i<2; i++)
+    {
+        DrawRectangleRec(players[i].box, BLUE);
+        DrawText(Labels[i],players[i].box.x + 22, players[i].box.y +12, 24, WHITE);//write the text for the box
+    }
+}
