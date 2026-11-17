@@ -6,9 +6,8 @@
 #include "Board.h"
 #include "Buttons.h"
 #include "MouseClicks.h"
-//I've Added my new Ui things - malek.
 #include "Winner.h"
-#include "ui.h"
+#include "ui.h" //I've Added my new Ui things - malek.
 
 int main()
 {
