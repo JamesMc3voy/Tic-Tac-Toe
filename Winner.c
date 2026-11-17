@@ -47,3 +47,4 @@ void CheckWinner3x3(BoardSquares Buttons[], int n, int *winner)
     }
 
 }
+}

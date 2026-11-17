@@ -2,7 +2,6 @@
 #ifndef BOARD_H // prevents the header files from being inlcuded more than once
 #ifndef UI_H
 #define UI_H
-#ifndef BOARD_H
 #define BOARD_H
 #include <raylib.h>
 
