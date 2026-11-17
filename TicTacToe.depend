@@ -11,7 +11,7 @@
 	"Winner.h"
 	"ui.h"
 
-1794906984 c:\users\james\documents\github\tic-tac-toe\board.h
+1794908034 c:\users\james\documents\github\tic-tac-toe\board.h
 	<raylib.h>
 
 1794835490 source:c:\users\james\documents\github\tic-tac-toe\board.c
@@ -37,7 +37,7 @@
 
 1794835221 c:\users\james\documents\github\tic-tac-toe\mouseclicks.h
 
-1794907127 source:c:\users\james\documents\github\tic-tac-toe\winner.c
+1794908034 source:c:\users\james\documents\github\tic-tac-toe\winner.c
 	"Buttons.h"
 
 1794757934 c:\users\james\documents\github\tic-tac-toe\winner.h
@@ -134,8 +134,6 @@
 1794707348 source:c:\users\malek\documents\github\tic-tac-toe\winner.c
 	"Buttons.h"
 
-
-
 1794836078 c:\users\matth\onedrive\documents\github\tic-tac-toe\buttons.h
 	<raylib.h>
 
@@ -164,5 +162,11 @@
 1794907960 source:c:\users\matth\onedrive\documents\github\tic-tac-toe\winner.c
 	"Buttons.h"
 
+1794909289 source:c:\users\james\documents\github\tic-tac-toe\minmaxai.c
+	<stdio.h>
+	"MinMaxAI.h"
+	"Board.h"
 
+1794909289 c:\users\james\documents\github\tic-tac-toe\minmaxai.h
+	"Buttons.h"
 
