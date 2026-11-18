@@ -39,6 +39,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Buttons.h" />
+		<Unit filename="MinMaxAI.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="MinMaxAI.h" />
 		<Unit filename="MouseClicks.c">
 			<Option compilerVar="CC" />
 		</Unit>

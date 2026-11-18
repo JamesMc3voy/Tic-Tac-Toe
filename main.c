@@ -2,14 +2,29 @@
 #include <stdlib.h>
 #include <raylib.h>
 
+//include headers
 #include "Board.h"
 #include "Buttons.h"
-#include "MouseClicks.h"          //I've Added my new Ui things - malek.
+#include "MouseClicks.h"
 #include "Winner.h"
-#include "ui.h"
+#include "ui.h" //I've Added my new Ui things - malek.
 
 int main()
 {
+
+    // 1. Run your console UI menu first!
+    int choice = show_main_menu();
+
+    if (choice == 5) {
+        printf("Quitting game.\n");
+        return 0;
+    }
+
+    int board_choice = choose_board_size(); // Returns 3 or 4
+    int n = board_choice;
+
+    // 2. Now launch the Raylib graphical window with the chosen settings
+    //co ordinates for top left of board
     InitWindow(1000, 900, "Tic Tac Toe - Member 3 UI");
     SetTargetFPS(60);
 
@@ -20,12 +35,16 @@ int main()
     int start_y_vert = 100;
     int start_x_horiz = 100;
     int start_y_horiz = 200;
-    int n = 3;
+    //int n =3;//line 24 board choice
     int turn = 1;
     int winner = 4;                            //I Maintained your code to be 99.9% the same so all your logic is the same - malek
 
     BoardSquares BoardSize[2];
-    BoardSquares Buttons[Max_N * Max_N];
+    BoardSquares Buttons[4 * 4]; // this is the max amount of squares we can have
+    BoardSquares players[2]; // only two buttons to choose from
+
+    //created raylib window, size 900x900
+    InitWindow(1000,900,"Tic Tac Toe");
 
     BoardButtons(Buttons, n);
     BoardSizeButtons(BoardSize);
@@ -36,7 +55,6 @@ int main()
         {
             // Check for menu clicks
             state = UpdateGraphicalMenu();
-
             BeginDrawing();
             ClearBackground(RAYWHITE);
             DrawGraphicalMenu();
@@ -50,6 +68,7 @@ int main()
             }
 
 
+            DrawSelectPlayerButtons(players);
             BoardSizeSelect(BoardSize, Buttons, &n);
 
             BeginDrawing();
