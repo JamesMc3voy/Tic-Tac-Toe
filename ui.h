@@ -10,7 +10,8 @@ typedef enum {
     STATE_PLAYING,
     STATE_TOURNAMENT
 } GameState;
-
+int show_main_menu(void);
+int choose_board_size(void);  //I added this because of the Implicit definition error
 //  Function prototypes
 void DrawGraphicalMenu(void);
 GameState UpdateGraphicalMenu(void);

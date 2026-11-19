@@ -2,29 +2,16 @@
 #include <stdlib.h>
 #include <raylib.h>
 
-//include headers
+// Include headers
 #include "Board.h"
 #include "Buttons.h"
 #include "MouseClicks.h"
 #include "Winner.h"
-#include "ui.h" //I've Added my new Ui things - malek.
+#include "ui.h"
 
 int main()
 {
-
-    // 1. Run your console UI menu first!
-    int choice = show_main_menu();
-
-    if (choice == 5) {
-        printf("Quitting game.\n");
-        return 0;
-    }
-
-    int board_choice = choose_board_size(); // Returns 3 or 4
-    int n = board_choice;
-
-    // 2. Now launch the Raylib graphical window with the chosen settings
-    //co ordinates for top left of board
+    // 1. Initialize the Raylib graphical window first
     InitWindow(1000, 900, "Tic Tac Toe - Member 3 UI");
     SetTargetFPS(60);
 
@@ -35,26 +22,31 @@ int main()
     int start_y_vert = 100;
     int start_x_horiz = 100;
     int start_y_horiz = 200;
-    //int n =3;//line 24 board choice
+    int n = 3; // Default board size (can be changed via board size buttons)
     int turn = 1;
-    int winner = 4;                            //I Maintained your code to be 99.9% the same so all your logic is the same - malek
+    int winner = 4;
+    // Inside main() where variables are initialized:
+    int scoreX = 0;
+    int scoreO = 0;
+    int roundNumber = 1;
+    char scoreText[50];
+    char roundText[50];
 
     BoardSquares BoardSize[2];
-    BoardSquares Buttons[4 * 4]; // this is the max amount of squares we can have
-    BoardSquares players[2]; // only two buttons to choose from
-
-    //created raylib window, size 900x900
-    InitWindow(1000,900,"Tic Tac Toe");
+    BoardSquares Buttons[4 * 4]; // Max amount of squares
+    BoardSquares players[2]; // Select player/bot buttons
 
     BoardButtons(Buttons, n);
     BoardSizeButtons(BoardSize);
+    SelectPlayerButtons(players);
 
     while (!WindowShouldClose())
     {
         if (state == STATE_MENU)
         {
-            // Check for menu clicks
-            state = UpdateGraphicalMenu();
+            // Check for graphical menu clicks
+            state = UpdateGraphicalMenu();                         // I REMOVED show_main_menu and choose_board_size it caused the errors and moved InitWindow to the beginning
+
             BeginDrawing();
             ClearBackground(RAYWHITE);
             DrawGraphicalMenu();
@@ -62,13 +54,52 @@ int main()
         }
         else if (state == STATE_PLAYING)
         {
-
             if (IsKeyPressed(KEY_ESCAPE)) {
                 state = STATE_MENU;
             }
 
+            // Handle user interactions
+            BoardSizeSelect(BoardSize, Buttons, &n);
 
+            // Check winner (assuming CheckWinner3x3 updates 'winner': 1 for X, 2 for O, 3 for draw, 4 for ongoing)
+            CheckWinner3x3(Buttons, n, &winner);
+
+            // If a round is won or drawn (assuming 3 is draw, or you check for draw conditions)
+            if (winner == 1 || winner == 2 || winner == 3)
+            {
+                if (winner == 1) scoreX++;
+                if (winner == 2) scoreO++;
+
+                roundNumber++;
+
+                // Reset the board and state for the next round
+                BoardButtons(Buttons, n);
+                turn = 1;
+                winner = 4;
+            }
+
+            BeginDrawing();
+            ClearBackground(RAYWHITE);
+
+            DrawBoardButtons(Buttons, n);
+            GameSquareSelect(Buttons, n, &turn);
+            DrawBoard(start_x_vert, start_y_vert, start_x_horiz, start_y_horiz, n);
+            DrawBoardSizeButtons(BoardSize);
             DrawSelectPlayerButtons(players);
+
+            // Display Rounds and Scores on screen
+            sprintf(roundText, "Round: %d", roundNumber);
+            sprintf(scoreText, "Score - X: %d | O: %d", scoreX, scoreO);
+            DrawText(roundText, 20, 60, 20, DARKGRAY);
+            DrawText(scoreText, 20, 90, 20, DARKGRAY);
+
+            DrawText("Press ESC to return to Menu", 20, 20, 18, GRAY);
+
+            EndDrawing();
+        }
+            }
+
+            // Handle user interactions
             BoardSizeSelect(BoardSize, Buttons, &n);
 
             BeginDrawing();
@@ -78,6 +109,7 @@ int main()
             GameSquareSelect(Buttons, n, &turn);
             DrawBoard(start_x_vert, start_y_vert, start_x_horiz, start_y_horiz, n);
             DrawBoardSizeButtons(BoardSize);
+            DrawSelectPlayerButtons(players);
             CheckWinner3x3(Buttons, n, &winner);
 
             DrawText("Press ESC to return to Menu", 20, 20, 18, GRAY);

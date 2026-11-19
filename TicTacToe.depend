@@ -92,17 +92,17 @@
 1794707348 source:c:\university\year 2\prog - project\tictactoe\tic-tac-toe\winner.c
 	"Buttons.h"
 
-1794703762 source:c:\users\malek\documents\github\tic-tac-toe\board.c
+1794710007 source:c:\users\malek\documents\github\tic-tac-toe\board.c
 	<raylib.h>
 
-1794708184 source:c:\users\malek\documents\github\tic-tac-toe\buttons.c
+1795015847 source:c:\users\malek\documents\github\tic-tac-toe\buttons.c
 	<raylib.h>
 	"Buttons.h"
 
-1794708124 c:\users\malek\documents\github\tic-tac-toe\buttons.h
+1795015847 c:\users\malek\documents\github\tic-tac-toe\buttons.h
 	<raylib.h>
 
-1794706921 source:c:\users\malek\documents\github\tic-tac-toe\main.c
+1795016923 source:c:\users\malek\documents\github\tic-tac-toe\main.c
 	<stdio.h>
 	<stdlib.h>
 	<raylib.h>
@@ -112,26 +112,26 @@
 	"Winner.h"
 	"ui.h"
 
-1794707998 c:\users\malek\documents\github\tic-tac-toe\board.h
+1795015847 c:\users\malek\documents\github\tic-tac-toe\board.h
 	<raylib.h>
 
-1794703762 c:\users\malek\documents\github\tic-tac-toe\mouseclicks.h
+1795015847 c:\users\malek\documents\github\tic-tac-toe\mouseclicks.h
 
-1794703762 c:\users\malek\documents\github\tic-tac-toe\winner.h
+1795015847 c:\users\malek\documents\github\tic-tac-toe\winner.h
 	"Buttons.h"
 
-1794707626 c:\users\malek\documents\github\tic-tac-toe\ui.h
+1795016368 c:\users\malek\documents\github\tic-tac-toe\ui.h
 	<raylib.h>
 
-1794703762 source:c:\users\malek\documents\github\tic-tac-toe\mouseclicks.c
+1795015847 source:c:\users\malek\documents\github\tic-tac-toe\mouseclicks.c
 	"Buttons.h"
 	"Board.h"
 
-1794708704 source:c:\users\malek\documents\github\tic-tac-toe\ui.c
+1795018129 source:c:\users\malek\documents\github\tic-tac-toe\ui.c
 	<raylib.h>
 	"ui.h"
 
-1794707348 source:c:\users\malek\documents\github\tic-tac-toe\winner.c
+1795015847 source:c:\users\malek\documents\github\tic-tac-toe\winner.c
 	"Buttons.h"
 
 1794836078 c:\users\matth\onedrive\documents\github\tic-tac-toe\buttons.h
@@ -168,5 +168,13 @@
 	"Board.h"
 
 1794933684 c:\users\james\documents\github\tic-tac-toe\minmaxai.h
+	"Buttons.h"
+
+1795015847 source:c:\users\malek\documents\github\tic-tac-toe\minmaxai.c
+	<stdio.h>
+	"MinMaxAI.h"
+	"Board.h"
+
+1795015847 c:\users\malek\documents\github\tic-tac-toe\minmaxai.h
 	"Buttons.h"
 
