@@ -1,5 +1,6 @@
 #include "Buttons.h"
 #include"Board.h"
+///checks whether the user wants a 3x3 or a 4x4 board
 void BoardSizeSelect(BoardSquares BoardSize[], BoardSquares Buttons[], int *n)
 {
     if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
@@ -7,10 +8,11 @@ void BoardSizeSelect(BoardSquares BoardSize[], BoardSquares Buttons[], int *n)
             Vector2 Cursor = GetMousePosition();
             if (CheckCollisionPointRec(Cursor, BoardSize[0].box)) {*n = 3; BoardButtons(Buttons, *n);}// if the cursor was pressed within the box
             //check both boxes, and assign the appropriate value to n and give n to the other funtions that are needed
-            if (CheckCollisionPointRec(Cursor, BoardSize[1].box)) { *n = 4; BoardButtons(Buttons, *n); }
+            if (CheckCollisionPointRec(Cursor, BoardSize[1].box)) { *n = 4; BoardButtons(Buttons, *n);}
         }
 }
 
+///detects what box the user chose for the game
 void GameSquareSelect(BoardSquares Buttons[],int n,int *turn)//check eack box on the board whetehr its free and if the user clicks it
 {
     if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT))//is cursor clicked
@@ -45,6 +47,7 @@ void GameSquareSelect(BoardSquares Buttons[],int n,int *turn)//check eack box on
     }
 }
 
+///checks what player mode the user chose
 void PlayerSelect(BoardSquares players[],int *p)
 {
     if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT))

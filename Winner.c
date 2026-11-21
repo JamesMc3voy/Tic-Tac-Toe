@@ -1,4 +1,5 @@
 #include "Buttons.h"
+int winner = 4; //no outcome
 void CheckWinner3x3(BoardSquares Buttons[], int n, int *winner)
 {
     //diagonal one
@@ -13,7 +14,6 @@ void CheckWinner3x3(BoardSquares Buttons[], int n, int *winner)
     //Check Columns
     for(int i=0; i<3;i++)
     {
-        *winner = 4; //no outcome
         int square1col = Buttons[i*3].state;//create a variable for each square in the rows or columns
         int square2col = Buttons[i*3+1].state;
         int square3col = Buttons[i*3+2].state;
@@ -45,7 +45,22 @@ void CheckWinner3x3(BoardSquares Buttons[], int n, int *winner)
         {
             *winner = (diag2square1 ==1) ? 1:2;
         }
-
+        //check draw
+        if(*winner == 4)
+        {
+            int BoardFull = 1; //start the board off as full
+            for(int k =0; k<n*n;k++)//check eac square
+            {
+                if(Buttons[k].state == 0)//if one isnt full
+                {
+                    BoardFull = 0;//we assign the full to 0
+                }
+            }
+            if(BoardFull ==1)// we then check if the board is completely full
+                {
+                    *winner =3;// if so winner is 3 and its a draw
+                }
+        }
     }
 }
 
@@ -65,7 +80,6 @@ void CheckWinner4x4(BoardSquares Buttons[], int n, int *winner)
 
     for(int i =0; i<n*n; i++)
     {
-        *winner = 4; //no outcome
         int square1col_4x4 = Buttons[i*4].state;//create a variable for each square in the rows or columns in a for loop
         int square2col_4x4 = Buttons[i*4 +1].state;
         int square3col_4x4 = Buttons[i*4 +2].state;
@@ -97,6 +111,22 @@ void CheckWinner4x4(BoardSquares Buttons[], int n, int *winner)
         if(diag2square1_4x4 != 0 && diag2square1_4x4 == diag2square2_4x4 && diag2square2_4x4 == diag2square3_4x4 && diag2square3_4x4 == diag2square4_4x4)
         {
             *winner = (diag2square1_4x4 ==1) ? 1:2;
+        }
+        //check draw
+        if(*winner == 4)
+        {
+            int BoardFull = 1;
+            for(int k =0; k<n*n;k++)
+            {
+                if(Buttons[k].state == 0)
+                {
+                    BoardFull = 0;
+                }
+            }
+            if(BoardFull ==0)
+                {
+                    *winner =3;
+                }
         }
     }
 }

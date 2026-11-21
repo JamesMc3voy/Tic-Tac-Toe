@@ -12,7 +12,6 @@ void DrawGraphicalMenu(void)
 
     // Title & Subtitle
     DrawText("TIC TAC TOE", 345, 120, 40, DARKBLUE);
-    DrawText("Malek's Shitty UI but its coloured", 380, 180, 20, GRAY);
 
     // 1. PvP Button (changes color on hover)
     Color colPvP = CheckCollisionPointRec(mousePos, btnPvP) ? SKYBLUE : LIGHTGRAY;
