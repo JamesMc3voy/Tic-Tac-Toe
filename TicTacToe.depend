@@ -102,7 +102,7 @@
 1795376691 c:\users\malek\documents\github\tic-tac-toe\buttons.h
 	<raylib.h>
 
-1795379106 source:c:\users\malek\documents\github\tic-tac-toe\main.c
+1795379739 source:c:\users\malek\documents\github\tic-tac-toe\main.c
 	<stdio.h>
 	<stdlib.h>
 	<raylib.h>
@@ -127,7 +127,7 @@
 	"Buttons.h"
 	"Board.h"
 
-1795379121 source:c:\users\malek\documents\github\tic-tac-toe\ui.c
+1795379739 source:c:\users\malek\documents\github\tic-tac-toe\ui.c
 	<raylib.h>
 	"ui.h"
 

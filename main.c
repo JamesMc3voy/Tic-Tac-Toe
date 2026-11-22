@@ -11,8 +11,9 @@
 
 int main()
 {
-    // 1. Initialize the Raylib graphical window first
+    // Initialize the Raylib graphical window first
     InitWindow(1000, 900, "Tic Tac Toe");
+    SetExitKey(KEY_NULL); // Prevent ESC from closing the window , it says press esc to go back but it always exits
     SetTargetFPS(60);
 
     GameState state = STATE_MENU;
