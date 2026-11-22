@@ -16,7 +16,7 @@ void DrawGraphicalMenu(void)
     // 1. PvP Button (changes color on hover)
     Color colPvP = CheckCollisionPointRec(mousePos, btnPvP) ? SKYBLUE : LIGHTGRAY;
     DrawRectangleRec(btnPvP, colPvP);
-    DrawText("   Free Play", btnPvP.x + 70, btnPvP.y + 15, 20, DARKGRAY);
+    DrawText("Freeplay", btnPvP.x + 105, btnPvP.y + 15, 20, DARKGRAY);
 
     // 2. Tournament Button
     Color colTourn = CheckCollisionPointRec(mousePos, btnTournament) ? SKYBLUE : LIGHTGRAY;

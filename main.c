@@ -61,7 +61,8 @@ int main()
             EndDrawing();
         }
 
-        else if (state == STATE_PLAYING)
+        // Freeplay and Tournament both use the board. Tournament also shows the round buttons.
+        else if (state == STATE_PLAYING || state == STATE_TOURNAMENT)
         {
             if (IsKeyPressed(KEY_ESCAPE))
             {
@@ -102,13 +103,16 @@ int main()
 
             ///change to only appear when bot is pressed
             DrawSelectDifficultyButtons(Difficulty);//draw the difficulty select buttons
-            DrawSelectRoundsButtons(SelectRounds);//draw the select rounds button
             DrawBoard(start_x_vert, start_y_vert, start_x_horiz, start_y_horiz, n); // draw the board
 
             GameSquareSelect(Buttons, n, &turn);//checks where the user clicks on the board
 
-            //display choose rounds text
-            DrawText("Select Number of Rounds",600,370,30,BLACK);
+            // Round choice is only for Tournament
+            if (state == STATE_TOURNAMENT)
+            {
+                DrawSelectRoundsButtons(SelectRounds);
+                DrawText("Select Number of Rounds",600,370,30,BLACK);
+            }
 
             // Display Rounds and Scores on screen
             sprintf(roundText, "Round: %d", roundNumber);
@@ -117,20 +121,6 @@ int main()
             DrawText(scoreText, 20, 90, 20, DARKGRAY);
 
             DrawText("Press ESC to return to Menu", 20, 20, 18, GRAY);
-            EndDrawing();
-        }
-
-        else if (state == STATE_TOURNAMENT)
-        {
-            if (IsKeyPressed(KEY_ESCAPE))
-            {
-                state = STATE_MENU;
-            }
-
-            BeginDrawing();
-            ClearBackground(RAYWHITE);
-            DrawText("TOURNAMENT MODE", 320, 300, 30, DARKGREEN);
-            DrawText("Press ESC to return to Menu", 360, 360, 18, GRAY);
             EndDrawing();
         }
     }
