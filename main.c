@@ -57,7 +57,7 @@ int main()
             state = UpdateGraphicalMenu(); // I REMOVED show_main_menu and choose_board_size it caused the errors and moved InitWindow to the beginning
 
             BeginDrawing();
-            ClearBackground(RAYWHITE);
+            ClearBackground((Color){ 241, 245, 249, 255 });
             DrawGraphicalMenu();
             EndDrawing();
         }
@@ -96,7 +96,7 @@ int main()
             }
 
             BeginDrawing();
-            ClearBackground(RAYWHITE);
+            ClearBackground((Color){ 241, 245, 249, 255 });;
 
             DrawBoardButtons(Buttons, n); //draws the squares for the board that the user will click
             DrawBoardSizeButtons(BoardSize);//draw the buttons for the 3x3 or 4x4 board
