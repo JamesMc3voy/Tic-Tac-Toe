@@ -18,7 +18,7 @@ int main()
 
     GameState state = STATE_MENU;
 
-    // Board setup variables: coordinar=tes for top left corner of box
+    // Board setup variables: coordinates for top left corner of box
     int start_x_vert = 200;
     int start_y_vert = 100;
     int start_x_horiz = 100;
@@ -26,7 +26,6 @@ int main()
     int n = 3; // Default board size (can be changed via board size buttons)
     int turn = 1; //begin with palyer 1
     int winner = 4; // 4 is no outcome yet, 3 is draw, 2 is player 2 win and 1 is player 1 win
-    int Playermode;
 
     // changes ScoreX and ScoreO to score 1 and score 2, as palyer 1 will always be x so when they swith whoever was x is now o
     //better to track by palyer, not by piece, i think
@@ -100,22 +99,25 @@ int main()
 
             BeginDrawing();
             ClearBackground((Color){ 241, 245, 249, 255 });;
-
             DrawBoardButtons(Buttons, n); //draws the squares for the board that the user will click
             DrawBoardSizeButtons(BoardSize);//draw the buttons for the 3x3 or 4x4 board
             DrawSelectPlayerButtons(players); // draw the buttons for the player or bot game modes
             DrawNewGameBtn(NewGameBtn);
 
-            if (Playermode == 2)
+            PlayerSelect(players);
+            GameSquareSelect(Buttons, n, &turn);//checks where the user clicks on the board
+            DrawBoard(start_x_vert, start_y_vert, start_x_horiz, start_y_horiz, n); // draw the board
+            DrawText("Board Size",600,80,20,BLACK);
+            DrawText("Player Mode", 600,180,20,BLACK);
+
+            if (players[1].state == 1)
             {
+                DrawText("Difficulty Level",600,270,20,BLACK);
                 DrawSelectDifficultyButtons(Difficulty);//draw the difficulty select buttons
             }
-            DrawBoard(start_x_vert, start_y_vert, start_x_horiz, start_y_horiz, n); // draw the board
 
-            GameSquareSelect(Buttons, n, &turn);//checks where the user clicks on the board
 
-            // Round choice is only for Tournament
-            if (state == STATE_TOURNAMENT)
+            if (state == STATE_TOURNAMENT) // Round choice is only for Tournament
             {
                 DrawSelectRoundsButtons(SelectRounds);
                 DrawText("Select Number of Rounds",600,370,30,BLACK);

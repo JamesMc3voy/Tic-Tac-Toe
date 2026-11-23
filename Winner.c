@@ -123,7 +123,7 @@ void CheckWinner4x4(BoardSquares Buttons[], int n, int *winner)
                     BoardFull = 0;
                 }
             }
-            if(BoardFull ==0)
+            if(BoardFull ==1)
                 {
                     *winner =3;
                 }

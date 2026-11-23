@@ -101,7 +101,7 @@ void DrawSelectRoundsButtons(BoardSquares SelectRounds[])
 
 void CreateNewGameBtn(BoardSquares NewGameBtn[])//create the box from struct
 {
-    NewGameBtn[1].box = (Rectangle){500,600,130,60};
+    NewGameBtn[1].box = (Rectangle){600,600,130,60};
     NewGameBtn[1].state = 0;
 }
 

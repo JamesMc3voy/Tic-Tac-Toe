@@ -48,18 +48,20 @@ void GameSquareSelect(BoardSquares Buttons[],int n,int *turn)//check eack box on
 }
 
 ///checks what player mode the user chose
-void PlayerSelect(BoardSquares players[],int *Playermode)
+void PlayerSelect(BoardSquares players[])
 {
     if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
         {
             Vector2 Cursor = GetMousePosition();
             if (CheckCollisionPointRec(Cursor, players[0].box))
             {
-                *Playermode = 1;
+                players[0].state = 1;
+                players[1].state = 0;
             }
             if (CheckCollisionPointRec(Cursor, players[1].box))
             {
-                *Playermode = 2;
+                players[1].state = 1;
+                players[0].state = 0;
             }
         }
 }
@@ -72,15 +74,15 @@ void SelectDifficulty(BoardSquares Difficulty[])
             Vector2 Cursor = GetMousePosition();
             if (CheckCollisionPointRec(Cursor, Difficulty[0].box))
             {
-                int DifficultyMode = 1;
+                Difficulty[0].state = 1;
             }
             if (CheckCollisionPointRec(Cursor, Difficulty[1].box))
             {
-                int DifficultyMode = 2;
+                Difficulty[1].state = 2;
             }
             if (CheckCollisionPointRec(Cursor, Difficulty[2].box))
             {
-                int DifficultyMode = 3;
+                Difficulty[2].state = 3;
             }
         }
 }
@@ -93,15 +95,15 @@ void SelectRoundsMouseClick(BoardSquares SelectRounds[])
             Vector2 Cursor = GetMousePosition();
             if (CheckCollisionPointRec(Cursor, SelectRounds[0].box))
             {
-                int RoundChoice = 1;
+                SelectRounds[0].state = 1;
             }
             if (CheckCollisionPointRec(Cursor, SelectRounds[1].box))
             {
-                int RoundChoice = 3;
+                SelectRounds[1].state = 3;
             }
             if (CheckCollisionPointRec(Cursor, SelectRounds[2].box))
             {
-                int RoundChoice = 5;
+                SelectRounds[2].state = 5;
             }
         }
 }
