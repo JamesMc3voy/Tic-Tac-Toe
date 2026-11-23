@@ -26,6 +26,7 @@ int main()
     int n = 3; // Default board size (can be changed via board size buttons)
     int turn = 1; //begin with palyer 1
     int winner = 4; // 4 is no outcome yet, 3 is draw, 2 is player 2 win and 1 is player 1 win
+    int Playermode;
 
     // changes ScoreX and ScoreO to score 1 and score 2, as palyer 1 will always be x so when they swith whoever was x is now o
     //better to track by palyer, not by piece, i think
@@ -41,6 +42,7 @@ int main()
     BoardSquares players[2]; //  2 is the number of boxes that will be created: Select player/bot buttons
     BoardSquares Difficulty[3]; // 3 because easy,medium, hard
     BoardSquares SelectRounds[3];// 3 because rounds: 1,3,5
+    BoardSquares NewGameBtn[1];
 
     //create the boxes here before drawing them
     BoardButtons(Buttons, n);
@@ -48,6 +50,7 @@ int main()
     SelectPlayerButtons(players);
     SelectDifficultyButtons(Difficulty);
     SelectRoundsButtons(SelectRounds);
+    CreateNewGameBtn(NewGameBtn);
 
     while (!WindowShouldClose())
     {
@@ -101,9 +104,12 @@ int main()
             DrawBoardButtons(Buttons, n); //draws the squares for the board that the user will click
             DrawBoardSizeButtons(BoardSize);//draw the buttons for the 3x3 or 4x4 board
             DrawSelectPlayerButtons(players); // draw the buttons for the player or bot game modes
+            DrawNewGameBtn(NewGameBtn);
 
-            ///change to only appear when bot is pressed
-            DrawSelectDifficultyButtons(Difficulty);//draw the difficulty select buttons
+            if (Playermode == 2)
+            {
+                DrawSelectDifficultyButtons(Difficulty);//draw the difficulty select buttons
+            }
             DrawBoard(start_x_vert, start_y_vert, start_x_horiz, start_y_horiz, n); // draw the board
 
             GameSquareSelect(Buttons, n, &turn);//checks where the user clicks on the board

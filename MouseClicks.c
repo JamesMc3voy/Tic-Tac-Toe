@@ -48,12 +48,60 @@ void GameSquareSelect(BoardSquares Buttons[],int n,int *turn)//check eack box on
 }
 
 ///checks what player mode the user chose
-void PlayerSelect(BoardSquares players[],int *p)
+void PlayerSelect(BoardSquares players[],int *Playermode)
 {
     if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
         {
             Vector2 Cursor = GetMousePosition();
-            if (CheckCollisionPointRec(Cursor, players[0].box));
-            if (CheckCollisionPointRec(Cursor, players[1].box));
+            if (CheckCollisionPointRec(Cursor, players[0].box))
+            {
+                *Playermode = 1;
+            }
+            if (CheckCollisionPointRec(Cursor, players[1].box))
+            {
+                *Playermode = 2;
+            }
+        }
+}
+
+///checks what difficulty is chosen
+void SelectDifficulty(BoardSquares Difficulty[])
+{
+    if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+        {
+            Vector2 Cursor = GetMousePosition();
+            if (CheckCollisionPointRec(Cursor, Difficulty[0].box))
+            {
+                int DifficultyMode = 1;
+            }
+            if (CheckCollisionPointRec(Cursor, Difficulty[1].box))
+            {
+                int DifficultyMode = 2;
+            }
+            if (CheckCollisionPointRec(Cursor, Difficulty[2].box))
+            {
+                int DifficultyMode = 3;
+            }
+        }
+}
+
+/// checks what number of rounds were chosen
+void SelectRoundsMouseClick(BoardSquares SelectRounds[])
+{
+    if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+        {
+            Vector2 Cursor = GetMousePosition();
+            if (CheckCollisionPointRec(Cursor, SelectRounds[0].box))
+            {
+                int RoundChoice = 1;
+            }
+            if (CheckCollisionPointRec(Cursor, SelectRounds[1].box))
+            {
+                int RoundChoice = 3;
+            }
+            if (CheckCollisionPointRec(Cursor, SelectRounds[2].box))
+            {
+                int RoundChoice = 5;
+            }
         }
 }

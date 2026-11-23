@@ -29,4 +29,8 @@ void SelectRoundsButtons(BoardSquares SelectRounds[]);//create the number of rou
 
 void DrawSelectRoundsButtons(BoardSquares SelectRounds[]);//draw the number of rounds select buttons
 
+void CreateNewGameBtn(BoardSquares NewGameBtn[]);//create the box
+
+void DrawNewGameBtn(BoardSquares NewGameBtn[]);//draw the box
+
 #endif

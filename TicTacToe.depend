@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
 1794244419 source:c:\users\james\documents\github\tic-tac-toe\test.c
 
-1795282361 source:c:\users\james\documents\github\tic-tac-toe\main.c
+1795441586 source:c:\users\james\documents\github\tic-tac-toe\main.c
 	<stdio.h>
 	<stdlib.h>
 	<raylib.h>
@@ -11,17 +11,17 @@
 	"Winner.h"
 	"ui.h"
 
-1795278030 c:\users\james\documents\github\tic-tac-toe\board.h
+1795375074 c:\users\james\documents\github\tic-tac-toe\board.h
 	<raylib.h>
 
-1795277937 source:c:\users\james\documents\github\tic-tac-toe\board.c
+1795375074 source:c:\users\james\documents\github\tic-tac-toe\board.c
 	<raylib.h>
 
-1795282255 source:c:\users\james\documents\github\tic-tac-toe\buttons.c
+1795441430 source:c:\users\james\documents\github\tic-tac-toe\buttons.c
 	<raylib.h>
 	"Buttons.h"
 
-1795282051 c:\users\james\documents\github\tic-tac-toe\buttons.h
+1795441430 c:\users\james\documents\github\tic-tac-toe\buttons.h
 	<raylib.h>
 
 1794761605 source:c:\users\matth\onedrive\documents\github\tic-tac-toe\board.c
@@ -31,24 +31,26 @@
 	<raylib.h>
 	"Buttons.h"
 
-1795279366 source:c:\users\james\documents\github\tic-tac-toe\mouseclicks.c
+1795441544 source:c:\users\james\documents\github\tic-tac-toe\mouseclicks.c
 	"Buttons.h"
 	"Board.h"
 
-1795278837 c:\users\james\documents\github\tic-tac-toe\mouseclicks.h
+1795439166 c:\users\james\documents\github\tic-tac-toe\mouseclicks.h
 
-1795282064 source:c:\users\james\documents\github\tic-tac-toe\winner.c
+1795375074 source:c:\users\james\documents\github\tic-tac-toe\winner.c
 	"Buttons.h"
 
-1795278837 c:\users\james\documents\github\tic-tac-toe\winner.h
+1795375074 c:\users\james\documents\github\tic-tac-toe\winner.h
 	"Buttons.h"
 
-1795278837 source:c:\users\james\documents\github\tic-tac-toe\ui.c
+1795438916 source:c:\users\james\documents\github\tic-tac-toe\ui.c
 	<raylib.h>
+	<stdio.h>
 	"ui.h"
 
-1795277388 c:\users\james\documents\github\tic-tac-toe\ui.h
+1795438916 c:\users\james\documents\github\tic-tac-toe\ui.h
 	<raylib.h>
+	<stdbool.h>
 
 1794708704 source:c:\university\year 2\prog - project\tictactoe\tic-tac-toe\ui.c
 	<raylib.h>
@@ -164,12 +166,12 @@
 1794907960 source:c:\users\matth\onedrive\documents\github\tic-tac-toe\winner.c
 	"Buttons.h"
 
-1795277388 source:c:\users\james\documents\github\tic-tac-toe\minmaxai.c
+1795375074 source:c:\users\james\documents\github\tic-tac-toe\minmaxai.c
 	<stdio.h>
 	"MinMaxAI.h"
 	"Board.h"
 
-1795277388 c:\users\james\documents\github\tic-tac-toe\minmaxai.h
+1795375074 c:\users\james\documents\github\tic-tac-toe\minmaxai.h
 	"Buttons.h"
 
 1795375941 source:c:\users\malek\documents\github\tic-tac-toe\minmaxai.c

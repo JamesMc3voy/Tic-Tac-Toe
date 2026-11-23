@@ -98,3 +98,15 @@ void DrawSelectRoundsButtons(BoardSquares SelectRounds[])
         DrawText(Labels[i],SelectRounds[i].box.x + 15, SelectRounds[i].box.y +12, 20, WHITE);
     }
 }
+
+void CreateNewGameBtn(BoardSquares NewGameBtn[])//create the box from struct
+{
+    NewGameBtn[1].box = (Rectangle){500,600,130,60};
+    NewGameBtn[1].state = 0;
+}
+
+void DrawNewGameBtn(BoardSquares NewGameBtn[])//draw the box
+{
+    DrawRectangleRec(NewGameBtn[1].box, ORANGE);
+    DrawText("New game",NewGameBtn[1].box.x + 15, NewGameBtn[1].box.y +12, 20, WHITE);
+}

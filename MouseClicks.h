@@ -8,4 +8,8 @@ void GameSquareSelect(BoardSquares Buttons[],int n,int *turn);//initailaise the 
 
 void PlayerSelect(BoardSquares players[], int *p);//detect clicks for player mode select boxes
 
+void SelectDifficulty(BoardSquares Difficulty[]);// to detect whether these buttons were pressed
+
+void SelectRoundsMouseClick(BoardSquares SelectRounds[]);// to detect whether these buttons were pressed
+
 #endif
