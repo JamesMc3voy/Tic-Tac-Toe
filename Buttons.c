@@ -84,7 +84,7 @@ void SelectRoundsButtons(BoardSquares SelectRounds[])
 {
     for(int i=0;i<3;i++)
     {
-        SelectRounds[i].box = (Rectangle){600 + 75*i*1.5,420,85,50};
+        SelectRounds[i].box = (Rectangle){600+75*i*1.5,420,85,50};
         SelectRounds[i].state = 0;
     }
 }
@@ -98,7 +98,7 @@ void DrawSelectRoundsButtons(BoardSquares SelectRounds[])
         DrawText(Labels[i],SelectRounds[i].box.x + 15, SelectRounds[i].box.y +12, 20, WHITE);
     }
 }
-
+///might remove the New Game Button - change it to reset
 void CreateNewGameBtn(BoardSquares NewGameBtn[])//create the box from struct
 {
     NewGameBtn[1].box = (Rectangle){600,600,130,60};
@@ -108,5 +108,5 @@ void CreateNewGameBtn(BoardSquares NewGameBtn[])//create the box from struct
 void DrawNewGameBtn(BoardSquares NewGameBtn[])//draw the box
 {
     DrawRectangleRec(NewGameBtn[1].box, ORANGE);
-    DrawText("New game",NewGameBtn[1].box.x + 15, NewGameBtn[1].box.y +15, 20, WHITE);
+    DrawText("Reset",NewGameBtn[1].box.x +30, NewGameBtn[1].box.y +15, 25, WHITE);
 }

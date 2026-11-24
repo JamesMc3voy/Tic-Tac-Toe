@@ -116,11 +116,10 @@ int main()
                 DrawSelectDifficultyButtons(Difficulty);//draw the difficulty select buttons
             }
 
-
             if (state == STATE_TOURNAMENT) // Round choice is only for Tournament
             {
                 DrawSelectRoundsButtons(SelectRounds);
-                DrawText("Select Number of Rounds",600,370,30,BLACK);
+                DrawText("Select Number of Rounds",600,370,25,BLACK);
             }
 
             // Display Rounds and Scores on screen
