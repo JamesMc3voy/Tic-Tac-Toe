@@ -126,8 +126,8 @@ int main()
             // Display Rounds and Scores on screen
             sprintf(roundText, "Round: %d", roundNumber);
             sprintf(scoreText, "Score - X: %d | O: %d", score1, score2);
-            DrawText(roundText, 20, 60, 20, DARKGRAY);
-            DrawText(scoreText, 20, 90, 20, DARKGRAY);
+            DrawText(roundText, 60, 600, 30, DARKGRAY);
+            DrawText(scoreText, 60, 650, 30, DARKGRAY); // I changed locations of the Score card - Malek
 
             DrawText("Press ESC to return to Menu", 20, 20, 18, GRAY);
             EndDrawing();
