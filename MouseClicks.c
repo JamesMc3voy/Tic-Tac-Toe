@@ -55,7 +55,7 @@ void PlayerSelect(BoardSquares players[])
             Vector2 Cursor = GetMousePosition();
             if (CheckCollisionPointRec(Cursor, players[0].box))
             {
-                players[0].state = 1;
+                players[0].state = 1;//update which box was chosen by state
                 players[1].state = 0;
             }
             if (CheckCollisionPointRec(Cursor, players[1].box))
@@ -75,14 +75,21 @@ void SelectDifficulty(BoardSquares Difficulty[])
             if (CheckCollisionPointRec(Cursor, Difficulty[0].box))
             {
                 Difficulty[0].state = 1;
+                Difficulty[1].state = 0;
+                Difficulty[2].state = 0;
             }
             if (CheckCollisionPointRec(Cursor, Difficulty[1].box))
             {
-                Difficulty[1].state = 2;
+                Difficulty[0].state = 0;
+                Difficulty[1].state = 1;
+                Difficulty[2].state = 0;
             }
             if (CheckCollisionPointRec(Cursor, Difficulty[2].box))
             {
-                Difficulty[2].state = 3;
+                Difficulty[0].state = 0;
+                Difficulty[1].state = 0;
+                Difficulty[2].state = 1;
+
             }
         }
 }
@@ -96,14 +103,20 @@ void SelectRoundsMouseClick(BoardSquares SelectRounds[])
             if (CheckCollisionPointRec(Cursor, SelectRounds[0].box))
             {
                 SelectRounds[0].state = 1;
+                SelectRounds[1].state = 0;
+                SelectRounds[2].state = 0;
             }
             if (CheckCollisionPointRec(Cursor, SelectRounds[1].box))
             {
-                SelectRounds[1].state = 3;
+                SelectRounds[0].state = 0;
+                SelectRounds[1].state = 1;
+                SelectRounds[2].state = 0;
             }
             if (CheckCollisionPointRec(Cursor, SelectRounds[2].box))
             {
-                SelectRounds[2].state = 5;
+                SelectRounds[0].state = 0;
+                SelectRounds[1].state = 0;
+                SelectRounds[2].state = 1;
             }
         }
 }

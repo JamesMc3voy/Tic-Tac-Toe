@@ -123,7 +123,7 @@ void CheckWinner4x4(BoardSquares Buttons[], int n, int *winner)
                     BoardFull = 0;
                 }
             }
-            if(BoardFull ==1)
+            if(BoardFull ==1)//fixed draw condition was 0 previusly, caused the rounds to count endlessly
                 {
                     *winner =3;
                 }

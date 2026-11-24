@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
 1794244419 source:c:\users\james\documents\github\tic-tac-toe\test.c
 
-1795451880 source:c:\users\james\documents\github\tic-tac-toe\main.c
+1795511778 source:c:\users\james\documents\github\tic-tac-toe\main.c
 	<stdio.h>
 	<stdlib.h>
 	<raylib.h>
@@ -17,11 +17,11 @@
 1795375074 source:c:\users\james\documents\github\tic-tac-toe\board.c
 	<raylib.h>
 
-1795450947 source:c:\users\james\documents\github\tic-tac-toe\buttons.c
+1795511778 source:c:\users\james\documents\github\tic-tac-toe\buttons.c
 	<raylib.h>
 	"Buttons.h"
 
-1795441752 c:\users\james\documents\github\tic-tac-toe\buttons.h
+1795511778 c:\users\james\documents\github\tic-tac-toe\buttons.h
 	<raylib.h>
 
 1794761605 source:c:\users\matth\onedrive\documents\github\tic-tac-toe\board.c
@@ -35,9 +35,9 @@
 	"Buttons.h"
 	"Board.h"
 
-1795451313 c:\users\james\documents\github\tic-tac-toe\mouseclicks.h
+1795511778 c:\users\james\documents\github\tic-tac-toe\mouseclicks.h
 
-1795450391 source:c:\users\james\documents\github\tic-tac-toe\winner.c
+1795512103 source:c:\users\james\documents\github\tic-tac-toe\winner.c
 	"Buttons.h"
 
 1795375074 c:\users\james\documents\github\tic-tac-toe\winner.h
