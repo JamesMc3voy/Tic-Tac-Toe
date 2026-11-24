@@ -108,5 +108,5 @@ void CreateNewGameBtn(BoardSquares NewGameBtn[])//create the box from struct
 void DrawNewGameBtn(BoardSquares NewGameBtn[])//draw the box
 {
     DrawRectangleRec(NewGameBtn[1].box, ORANGE);
-    DrawText("New game",NewGameBtn[1].box.x + 15, NewGameBtn[1].box.y +12, 20, WHITE);
+    DrawText("New game",NewGameBtn[1].box.x + 15, NewGameBtn[1].box.y +15, 20, WHITE);
 }
