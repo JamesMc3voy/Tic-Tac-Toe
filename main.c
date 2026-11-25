@@ -9,6 +9,16 @@
 #include "Winner.h"
 #include "ui.h"
 
+static void ResetMatchState(BoardSquares Buttons[], int n, int *turn, int *winner, int *score1, int *score2, int *roundNumber)
+{
+    BoardButtons(Buttons, n);   // I added this function trying to make going back reset the game
+    *turn = 1;             // you can possibly connect it to the reset button when its fully working
+    *winner = 4;
+    if (score1) *score1 = 0;
+    if (score2) *score2 = 0;
+    if (roundNumber) *roundNumber = 1;
+}
+
 int main()
 {
     // Initialize the Raylib graphical window first
@@ -69,8 +79,21 @@ int main()
         {
             if (IsKeyPressed(KEY_ESCAPE))
             {
+                // CHANGED: Reset board, scores, and round when leaving to menu so X/O don't stay
+                ResetMatchState(Buttons, n, &turn, &winner, &score1, &score2, &roundNumber);
                 state = STATE_MENU;
             }
+
+            // CHANGED: Handle clicks on the 1, 3, and 5 round buttons in Tournament mode
+            if (state == STATE_TOURNAMENT)
+            {
+                SelectRoundsMouseClick(SelectRounds);
+            }
+
+            // CHANGED: arget rounds from selected round button (defaults to 1)
+            int targetRounds = 1;
+            if (SelectRounds[1].state == 1) targetRounds = 3;
+            else if (SelectRounds[2].state == 1) targetRounds = 5;
 
             BoardSizeSelect(BoardSize, Buttons, &n); // check what square the user chose on the board
             if(n == 3) //whether its a 3x3 or 4x4 board, use appropriate check conditions
@@ -89,7 +112,11 @@ int main()
                 if (winner == 1) score1++;
                 if (winner == 2) score2++;
 
-                roundNumber++;
+                // CHANGED: Stop advancing past targetRounds in Tournament mode (e.g., stays on round 1 for 1-round button)
+                if (!(state == STATE_TOURNAMENT && roundNumber >= targetRounds))
+                {
+                    roundNumber++;
+                }
 
                 // Reset the board and state for the next round
                 BoardButtons(Buttons, n);
@@ -116,10 +143,11 @@ int main()
                 DrawSelectDifficultyButtons(Difficulty);//draw the difficulty select buttons
             }
 
+
             if (state == STATE_TOURNAMENT) // Round choice is only for Tournament
             {
                 DrawSelectRoundsButtons(SelectRounds);
-                DrawText("Select Number of Rounds",600,370,25,BLACK);
+                DrawText("Select Number of Rounds",600,370,30,BLACK);
             }
 
             // Display Rounds and Scores on screen

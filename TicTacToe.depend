@@ -97,7 +97,7 @@
 1795376691 source:c:\users\malek\documents\github\tic-tac-toe\board.c
 	<raylib.h>
 
-1795537943 source:c:\users\malek\documents\github\tic-tac-toe\buttons.c
+1795567524 source:c:\users\malek\documents\github\tic-tac-toe\buttons.c
 	<raylib.h>
 	"Buttons.h"
 
@@ -126,7 +126,7 @@
 	<raylib.h>
 	<stdbool.h>
 
-1795537943 source:c:\users\malek\documents\github\tic-tac-toe\mouseclicks.c
+1795567524 source:c:\users\malek\documents\github\tic-tac-toe\mouseclicks.c
 	"Buttons.h"
 	"Board.h"
 
