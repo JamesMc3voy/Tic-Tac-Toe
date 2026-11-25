@@ -19,6 +19,13 @@ static void ResetMatchState(BoardSquares Buttons[], int n, int *turn, int *winne
     if (roundNumber) *roundNumber = 1;
 }
 
+
+
+
+
+
+
+
 int main()
 {
     // Initialize the Raylib graphical window first
@@ -44,6 +51,28 @@ int main()
     int roundNumber = 1; //tracking rounds
     char scoreText[50];
     char roundText[50];
+
+
+
+
+    // Getting the Robot Face
+
+    int animFrames = 0;
+Image botGif = LoadImageAnim("bot_face.gif", &animFrames); // Loads all face frames
+Texture2D botTex = LoadTextureFromImage(botGif);      // GPU texture for drawing
+
+unsigned int nextFrameDataOffset = 0;
+int currentAnimFrame = 0;
+int frameDelay = 6;   // Speed control of the guy movement: higher = slower, lower = faster
+int frameCounter = 0;
+
+
+
+
+
+
+
+
 
     //initialising arrays for boxes
     BoardSquares BoardSize[2]; // 2 is the number of boxes needed for this array 3x3 or 4x4
@@ -140,9 +169,18 @@ int main()
             if (players[1].state == 1)
             {
                 DrawText("Difficulty Level",600,270,20,BLACK);
+                DrawText("Opponent Hacked Facecam:", 620, 492, 20, BLACK);
                 DrawSelectDifficultyButtons(Difficulty);//draw the difficulty select buttons
-            }
 
+                // Put the simple animated GIF snippet here
+                if (animFrames > 0 && ++frameCounter >= frameDelay)
+                {
+                    frameCounter = 0;
+                    currentAnimFrame = (currentAnimFrame + 1) % animFrames;
+                    UpdateTexture(botTex, (unsigned char *)botGif.data + botGif.width * botGif.height * 4 * currentAnimFrame);
+                }
+                if (animFrames > 0) DrawTexture(botTex, 620, 520, WHITE);
+            }
 
             if (state == STATE_TOURNAMENT) // Round choice is only for Tournament
             {
