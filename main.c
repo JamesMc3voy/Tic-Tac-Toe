@@ -19,13 +19,6 @@ static void ResetMatchState(BoardSquares Buttons[], int n, int *turn, int *winne
     if (roundNumber) *roundNumber = 1;
 }
 
-
-
-
-
-
-
-
 int main()
 {
     // Initialize the Raylib graphical window first
@@ -52,27 +45,15 @@ int main()
     char scoreText[50];
     char roundText[50];
 
-
-
-
     // Getting the Robot Face
-
     int animFrames = 0;
-Image botGif = LoadImageAnim("bot_face.gif", &animFrames); // Loads all face frames
-Texture2D botTex = LoadTextureFromImage(botGif);      // GPU texture for drawing
+    Image botGif = LoadImageAnim("bot_face.gif", &animFrames); // Loads all face frames
+    Texture2D botTex = LoadTextureFromImage(botGif);      // GPU texture for drawing
 
-unsigned int nextFrameDataOffset = 0;
-int currentAnimFrame = 0;
-int frameDelay = 6;   // Speed control of the guy movement: higher = slower, lower = faster
-int frameCounter = 0;
-
-
-
-
-
-
-
-
+    unsigned int nextFrameDataOffset = 0;
+    int currentAnimFrame = 0;
+    int frameDelay = 6;   // Speed control of the guy movement: higher = slower, lower = faster
+    int frameCounter = 0;
 
     //initialising arrays for boxes
     BoardSquares BoardSize[2]; // 2 is the number of boxes needed for this array 3x3 or 4x4
@@ -80,7 +61,7 @@ int frameCounter = 0;
     BoardSquares players[2]; //  2 is the number of boxes that will be created: Select player/bot buttons
     BoardSquares Difficulty[3]; // 3 because easy,medium, hard
     BoardSquares SelectRounds[3];// 3 because rounds: 1,3,5
-    BoardSquares NewGameBtn[1];
+    BoardSquares ResetBtn[1];
 
     //create the boxes here before drawing them
     BoardButtons(Buttons, n);
@@ -88,7 +69,7 @@ int frameCounter = 0;
     SelectPlayerButtons(players);
     SelectDifficultyButtons(Difficulty);
     SelectRoundsButtons(SelectRounds);
-    CreateNewGameBtn(NewGameBtn);
+    CreateNewGameBtn(ResetBtn);
 
     while (!WindowShouldClose())
     {
@@ -106,11 +87,12 @@ int frameCounter = 0;
         // Freeplay and Tournament both use the board. Tournament also shows the round buttons.
         else if (state == STATE_PLAYING || state == STATE_TOURNAMENT)
         {
-            if (IsKeyPressed(KEY_ESCAPE))
+            if (IsKeyPressed(KEY_ESCAPE)|| ResetBtn[0].state == 1)///reset button not working rn
             {
                 // CHANGED: Reset board, scores, and round when leaving to menu so X/O don't stay
                 ResetMatchState(Buttons, n, &turn, &winner, &score1, &score2, &roundNumber);
                 state = STATE_MENU;
+                ResetBtn[0].state = 0;
             }
 
             // CHANGED: Handle clicks on the 1, 3, and 5 round buttons in Tournament mode
@@ -158,10 +140,11 @@ int frameCounter = 0;
             DrawBoardButtons(Buttons, n); //draws the squares for the board that the user will click
             DrawBoardSizeButtons(BoardSize);//draw the buttons for the 3x3 or 4x4 board
             DrawSelectPlayerButtons(players); // draw the buttons for the player or bot game modes
-            DrawNewGameBtn(NewGameBtn);
+            DrawNewGameBtn(ResetBtn);
 
             PlayerSelect(players);
             GameSquareSelect(Buttons, n, &turn);//checks where the user clicks on the board
+            ResetBtnClicked(ResetBtn);
             DrawBoard(start_x_vert, start_y_vert, start_x_horiz, start_y_horiz, n); // draw the board
             DrawText("Board Size",600,80,20,BLACK);
             DrawText("Player Mode", 600,180,20,BLACK);

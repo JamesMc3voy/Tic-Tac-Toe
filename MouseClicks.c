@@ -132,3 +132,15 @@ void SelectRoundsMouseClick(BoardSquares SelectRounds[])
             }
         }
 }
+
+void ResetBtnClicked(BoardSquares ResetBtn[])
+{
+    if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+        {
+            Vector2 Cursor = GetMousePosition();
+            if (CheckCollisionPointRec(Cursor, ResetBtn[0].box))
+            {
+                ResetBtn[0].state = 1;
+            }
+        }
+}

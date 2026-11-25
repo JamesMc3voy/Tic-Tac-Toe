@@ -12,4 +12,6 @@ void SelectDifficulty(BoardSquares Difficulty[]);// to detect whether these butt
 
 void SelectRoundsMouseClick(BoardSquares SelectRounds[]);// to detect whether these buttons were pressed
 
+void ResetBtnClicked(BoardSquares ResetBtn[]);
+
 #endif
