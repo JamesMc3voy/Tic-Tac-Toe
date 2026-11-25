@@ -12,3 +12,5 @@ TicTacToe.depend
 .vscode/launch.json
 TicTacToe.layout
 TicTacToe.depend
+*.depend
+*.layout

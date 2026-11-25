@@ -97,14 +97,14 @@
 1795376691 source:c:\users\malek\documents\github\tic-tac-toe\board.c
 	<raylib.h>
 
-1795376691 source:c:\users\malek\documents\github\tic-tac-toe\buttons.c
+1795537943 source:c:\users\malek\documents\github\tic-tac-toe\buttons.c
 	<raylib.h>
 	"Buttons.h"
 
 1795537943 c:\users\malek\documents\github\tic-tac-toe\buttons.h
 	<raylib.h>
 
-1795383910 source:c:\users\malek\documents\github\tic-tac-toe\main.c
+1795537986 source:c:\users\malek\documents\github\tic-tac-toe\main.c
 	<stdio.h>
 	<stdlib.h>
 	<raylib.h>
@@ -117,7 +117,7 @@
 1795376691 c:\users\malek\documents\github\tic-tac-toe\board.h
 	<raylib.h>
 
-1795376691 c:\users\malek\documents\github\tic-tac-toe\mouseclicks.h
+1795537943 c:\users\malek\documents\github\tic-tac-toe\mouseclicks.h
 
 1795376691 c:\users\malek\documents\github\tic-tac-toe\winner.h
 	"Buttons.h"
@@ -126,7 +126,7 @@
 	<raylib.h>
 	<stdbool.h>
 
-1795376691 source:c:\users\malek\documents\github\tic-tac-toe\mouseclicks.c
+1795537943 source:c:\users\malek\documents\github\tic-tac-toe\mouseclicks.c
 	"Buttons.h"
 	"Board.h"
 
@@ -135,7 +135,7 @@
 	<stdio.h>
 	"ui.h"
 
-1795376691 source:c:\users\malek\documents\github\tic-tac-toe\winner.c
+1795537943 source:c:\users\malek\documents\github\tic-tac-toe\winner.c
 	"Buttons.h"
 
 1794836078 c:\users\matth\onedrive\documents\github\tic-tac-toe\buttons.h
