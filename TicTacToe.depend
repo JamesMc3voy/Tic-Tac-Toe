@@ -257,3 +257,55 @@
 1795787703 c:\users\matth\onedrive\documents\github\tic-tac-toe\hardai3.h
 	"Buttons.h"
 
+1795794020 source:c:\users\james\documents\github\tic-tac-toe\easyai3.c
+	<stdio.h>
+	"EasyAI3.h"
+	"Board.h"
+	<stdlib.h>
+
+1795794020 c:\users\james\documents\github\tic-tac-toe\easyai3.h
+	"Buttons.h"
+
+1795794020 source:c:\users\james\documents\github\tic-tac-toe\easyai4.c
+	<stdio.h>
+	"EasyAI4.h"
+	"Board.h"
+	<stdlib.h>
+
+1795794020 c:\users\james\documents\github\tic-tac-toe\easyai4.h
+	"Buttons.h"
+
+1795794020 source:c:\users\james\documents\github\tic-tac-toe\hardai3.c
+	<stdio.h>
+	"HardAI3.h"
+	"Board.h"
+
+1795794020 c:\users\james\documents\github\tic-tac-toe\hardai3.h
+	"Buttons.h"
+
+1795794020 source:c:\users\james\documents\github\tic-tac-toe\hardai4.c
+	<stdio.h>
+	"HardAI4.h"
+	"Board.h"
+
+1795794833 c:\users\james\documents\github\tic-tac-toe\hardai4.h
+	"Buttons.h"
+
+1795794020 source:c:\users\james\documents\github\tic-tac-toe\medai3.c
+	<stdio.h>
+	"MedAI3.h"
+	"Board.h"
+	<stdlib.h>
+
+1795794020 c:\users\james\documents\github\tic-tac-toe\medai3.h
+	"Buttons.h"
+
+1795794020 source:c:\users\james\documents\github\tic-tac-toe\medai4.c
+	<stdio.h>
+	"MedAI4.h"
+	"Board.h"
+	<stdlib.h>
+
+1795794020 c:\users\james\documents\github\tic-tac-toe\medai4.h
+	"Buttons.h"
+

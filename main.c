@@ -147,19 +147,51 @@ int main()
             DrawBoardSizeButtons(BoardSize);//draw the buttons for the 3x3 or 4x4 board
             DrawSelectPlayerButtons(players); // draw the buttons for the player or bot game modes
             DrawNewGameBtn(ResetBtn);
+            ResetBtnClicked(ResetBtn);
 
             PlayerSelect(players);
             GameSquareSelect(Buttons, n, &turn);//checks where the user clicks on the board
-            ResetBtnClicked(ResetBtn);
             DrawBoard(start_x_vert, start_y_vert, start_x_horiz, start_y_horiz, n); // draw the board
             DrawText("Board Size",600,80,20,BLACK);
             DrawText("Player Mode", 600,180,20,BLACK);
-            //EasyAI3(Buttons, n, &turn);
-            //EasyAI4(Buttons, n, &turn);
-            MedAI3(Buttons, n, &turn);
-            MedAI4(Buttons, n, &turn);
-            //HardAI3(Buttons, n, &turn);
-          //  HardAI4(Buttons, n, &turn);
+
+            if(n == 3 && players[1].state == 1)
+            {
+                if(Difficulty[0].state == 1)
+                {
+                    EasyAI3(Buttons, n, &turn);
+                    DrawText("Easy", 300,300,20,BLACK);
+                }
+                if(Difficulty[1].state == 1)
+                {
+                    MedAI3(Buttons, n, &turn);
+                    DrawText("Medium", 300,300,20,BLACK);
+                }
+                if(Difficulty[2].state == 1)
+                {
+                    HardAI3(Buttons, n, &turn);
+                    DrawText("HARD", 300,300,20,BLACK);
+                }
+            }
+            if(n == 4 && players[1].state == 1)
+            {
+                if(Difficulty[0].state == 1)
+                {
+                    EasyAI4(Buttons, n, &turn);
+                    DrawText("EASY", 300,300,20,BLACK);
+                }
+                if(Difficulty[1].state == 1)
+                {
+                    MedAI4(Buttons, n, &turn);
+                    DrawText("Medium", 300,300,20,BLACK);
+                }
+                if(Difficulty[2].state == 1)
+                {
+                    HardAI4(Buttons, n, &turn);
+                    DrawText("HARD", 300,300,20,BLACK);
+                }
+            }
+
 
             if (players[1].state == 1)
             {
