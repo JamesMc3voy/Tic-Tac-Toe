@@ -2,7 +2,7 @@
 //Board Function
 void DrawBoard(int start_x_vert,int start_y_vert,int start_x_horiz,int start_y_horiz,int n)
 {
-    for(int i = 0; i<n-1; i++)// change 3 to n when buutons for 3x3 or 4x4 board are up and working
+    for(int i = 0; i<n-1; i++)//  n for 3x3 or 4x4 board are up and working
     {
         //Vertical Lines  line thickness and colour for both vertical and horizontal lines
         DrawLineEx((Vector2){start_x_vert + 100*i,start_y_vert},(Vector2){start_x_vert +100*i,start_y_vert +100*n},5,BLACK);

@@ -17,19 +17,20 @@ void BoardSizeButtons(BoardSquares BoardSize[]);//create the squares to choose b
 
 void DrawBoardSizeButtons(BoardSquares BoardSize[]);// draw the buttons to choose size of the board
 
+void SelectPlayerButtons(BoardSquares players[]);//create the boxes for player mode (bot or player)
 
+void DrawSelectPlayerButtons(BoardSquares players[]);//draw the boxes for player mode
 
-void SelectPlayerButtons(BoardSquares players[]);
+void SelectDifficultyButtons(BoardSquares Difficulty[]);//create the difficulty select buttons
 
-void DrawSelectPlayerButtons(BoardSquares players[]);
+void DrawSelectDifficultyButtons(BoardSquares Difficulty[]);//draw the difficulty select buttons
 
-void DrawX(int x, int y);
-void DrawO(int x, int y);
-  // added these here because of an error he compiler is throwing an "implicit declaration" warning/error because the file containing this loop doesn't know where DrawX and DrawO are defined. -Malek-
+void SelectRoundsButtons(BoardSquares SelectRounds[]);//create the number of rounds select buttons
 
+void DrawSelectRoundsButtons(BoardSquares SelectRounds[]);//draw the number of rounds select buttons
 
-void DrawX(int x, int y);
-void DrawO(int x, int y);
-  // added these here because of an error he compiler is throwing an "implicit declaration" warning/error because the file containing this loop doesn't know where DrawX and DrawO are defined. -Malek-
+void CreateNewGameBtn(BoardSquares NewGameBtn[]);//create the box
+
+void DrawNewGameBtn(BoardSquares NewGameBtn[]);//draw the box
 
 #endif

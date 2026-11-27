@@ -1,16 +1,30 @@
 #include "Buttons.h"
 #include"Board.h"
+///checks whether the user wants a 3x3 or a 4x4 board
 void BoardSizeSelect(BoardSquares BoardSize[], BoardSquares Buttons[], int *n)
 {
     if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
         {
             Vector2 Cursor = GetMousePosition();
-            if (CheckCollisionPointRec(Cursor, BoardSize[0].box)) {*n = 3; BoardButtons(Buttons, *n);}// if the cursor was pressed within the box
+            if (CheckCollisionPointRec(Cursor, BoardSize[0].box)) // if the cursor was pressed within the box
+            {
+                *n = 3;
+                BoardButtons(Buttons, *n);
+                BoardSize[0].state = 1;
+                BoardSize[1].state = 0;
+            }
             //check both boxes, and assign the appropriate value to n and give n to the other funtions that are needed
-            if (CheckCollisionPointRec(Cursor, BoardSize[1].box)) { *n = 4; BoardButtons(Buttons, *n); }
+            if (CheckCollisionPointRec(Cursor, BoardSize[1].box))
+            {
+                *n = 4;
+                BoardButtons(Buttons, *n);
+                BoardSize[0].state = 0;
+                BoardSize[1].state = 1;
+            }
         }
 }
 
+///detects what box the user chose for the game
 void GameSquareSelect(BoardSquares Buttons[],int n,int *turn)//check eack box on the board whetehr its free and if the user clicks it
 {
     if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT))//is cursor clicked
@@ -45,12 +59,88 @@ void GameSquareSelect(BoardSquares Buttons[],int n,int *turn)//check eack box on
     }
 }
 
-void PlayerSelect(BoardSquares players[],int *p)
+///checks what player mode the user chose
+void PlayerSelect(BoardSquares players[])
 {
     if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
         {
             Vector2 Cursor = GetMousePosition();
-            if (CheckCollisionPointRec(Cursor, players[0].box));
-            if (CheckCollisionPointRec(Cursor, players[1].box));
+            if (CheckCollisionPointRec(Cursor, players[0].box))
+            {
+                players[0].state = 1;//update which box was chosen by state
+                players[1].state = 0;
+            }
+            if (CheckCollisionPointRec(Cursor, players[1].box))
+            {
+                players[1].state = 1;
+                players[0].state = 0;
+            }
+        }
+}
+
+///checks what difficulty is chosen
+void SelectDifficulty(BoardSquares Difficulty[])
+{
+    if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+        {
+            Vector2 Cursor = GetMousePosition();
+            if (CheckCollisionPointRec(Cursor, Difficulty[0].box))
+            {
+                Difficulty[0].state = 1;
+                Difficulty[1].state = 0;
+                Difficulty[2].state = 0;
+            }
+            if (CheckCollisionPointRec(Cursor, Difficulty[1].box))
+            {
+                Difficulty[0].state = 0;
+                Difficulty[1].state = 1;
+                Difficulty[2].state = 0;
+            }
+            if (CheckCollisionPointRec(Cursor, Difficulty[2].box))
+            {
+                Difficulty[0].state = 0;
+                Difficulty[1].state = 0;
+                Difficulty[2].state = 1;
+
+            }
+        }
+}
+
+/// checks what number of rounds were chosen
+void SelectRoundsMouseClick(BoardSquares SelectRounds[])
+{
+    if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+        {
+            Vector2 Cursor = GetMousePosition();
+            if (CheckCollisionPointRec(Cursor, SelectRounds[0].box))
+            {
+                SelectRounds[0].state = 1;
+                SelectRounds[1].state = 0;
+                SelectRounds[2].state = 0;
+            }
+            if (CheckCollisionPointRec(Cursor, SelectRounds[1].box))
+            {
+                SelectRounds[0].state = 0;
+                SelectRounds[1].state = 1;
+                SelectRounds[2].state = 0;
+            }
+            if (CheckCollisionPointRec(Cursor, SelectRounds[2].box))
+            {
+                SelectRounds[0].state = 0;
+                SelectRounds[1].state = 0;
+                SelectRounds[2].state = 1;
+            }
+        }
+}
+
+void ResetBtnClicked(BoardSquares ResetBtn[])
+{
+    if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+        {
+            Vector2 Cursor = GetMousePosition();
+            if (CheckCollisionPointRec(Cursor, ResetBtn[0].box))
+            {
+                ResetBtn[0].state = 1;
+            }
         }
 }
