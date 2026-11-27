@@ -101,3 +101,4 @@ bool UpdateAndDrawMenuButton(void)
 
     return IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && CheckCollisionPointRec(GetMousePosition(), menuBtn);
 }
+

@@ -56,7 +56,6 @@ int main()
     Image botGif = LoadImageAnim("bot_face.gif", &animFrames); // Loads all face frames
     Texture2D botTex = LoadTextureFromImage(botGif);      // GPU texture for drawing
 
-    unsigned int nextFrameDataOffset = 0;
     int currentAnimFrame = 0;
     int frameDelay = 6;   // Speed control of the guy movement: higher = slower, lower = faster
     int frameCounter = 0;
@@ -93,18 +92,25 @@ int main()
         // Freeplay and Tournament both use the board. Tournament also shows the round buttons.
         else if (state == STATE_PLAYING || state == STATE_TOURNAMENT)
         {
-            if (IsKeyPressed(KEY_ESCAPE)|| ResetBtn[0].state == 1)///reset button not working rn
+            if (IsKeyPressed(KEY_ESCAPE))
             {
                 // CHANGED: Reset board, scores, and round when leaving to menu so X/O don't stay
                 ResetMatchState(Buttons, n, &turn, &winner, &score1, &score2, &roundNumber);
                 state = STATE_MENU;
+            }
+            ResetBtnClicked(ResetBtn);
+            if(ResetBtn[0].state == 1)
+            {
+                ResetMatchState(Buttons, n, &turn, &winner, &score1, &score2, &roundNumber);
                 ResetBtn[0].state = 0;
             }
+
 
             // CHANGED: Handle clicks on the 1, 3, and 5 round buttons in Tournament mode
             if (state == STATE_TOURNAMENT)
             {
                 SelectRoundsMouseClick(SelectRounds);
+                //DrawText("Best of ",60,550,30,BLACK);
             }
 
             // CHANGED: arget rounds from selected round button (defaults to 1)
@@ -112,7 +118,21 @@ int main()
             if (SelectRounds[1].state == 1) targetRounds = 3;
             else if (SelectRounds[2].state == 1) targetRounds = 5;
 
+            BeginDrawing();
+            ClearBackground((Color){ 241, 245, 249, 255 });;
+            DrawBoardButtons(Buttons, n); //draws the squares for the board that the user will click
+            DrawBoardSizeButtons(BoardSize);//draw the buttons for the 3x3 or 4x4 board
+            DrawSelectPlayerButtons(players); // draw the buttons for the player or bot game modes
+            DrawNewGameBtn(ResetBtn);
+
             BoardSizeSelect(BoardSize, Buttons, &n); // check what square the user chose on the board
+            PlayerSelect(players);
+            GameSquareSelect(Buttons, n, &turn);//checks where the user clicks on the board
+            DrawBoard(start_x_vert, start_y_vert, start_x_horiz, start_y_horiz, n); // draw the board
+            DrawText("Board Size",600,80,20,BLACK);
+            DrawText("Player Mode", 600,180,20,BLACK);
+
+        ///check Win conditions***************************
             if(n == 3) //whether its a 3x3 or 4x4 board, use appropriate check conditions
             {
                 CheckWinner3x3(Buttons, n, &winner);  // Check winner 3x3
@@ -122,77 +142,97 @@ int main()
                 CheckWinner4x4(Buttons, n,&winner);
             }
 
-
-            // If a round is won or drawn
+            /// If a round is won or drawn
             if (winner == 1 || winner == 2 || winner == 3)
             {
                 if (winner == 1) score1++;
                 if (winner == 2) score2++;
 
-                // CHANGED: Stop advancing past targetRounds in Tournament mode (e.g., stays on round 1 for 1-round button)
-                if (!(state == STATE_TOURNAMENT && roundNumber >= targetRounds))
+            /// CHANGED: Stop advancing past targetRounds in Tournament mode (e.g., stays on round 1 for 1-round button)
+                if (state == STATE_TOURNAMENT && roundNumber >= targetRounds)
+                {
+                    roundNumber = 0;
+                    score1 = 0;
+                    score2 = 0;
+                }
+                else
                 {
                     roundNumber++;
                 }
-
-                // Reset the board and state for the next round
-                BoardButtons(Buttons, n);
-                turn = 1;
-                winner = 4;
+            ///Reset board and turns after win/lose or draw
+            BoardButtons(Buttons, n);
+            turn = 1;
+            winner = 4;
             }
-
-            BeginDrawing();
-            ClearBackground((Color){ 241, 245, 249, 255 });;
-            DrawBoardButtons(Buttons, n); //draws the squares for the board that the user will click
-            DrawBoardSizeButtons(BoardSize);//draw the buttons for the 3x3 or 4x4 board
-            DrawSelectPlayerButtons(players); // draw the buttons for the player or bot game modes
-            DrawNewGameBtn(ResetBtn);
-            ResetBtnClicked(ResetBtn);
-
-            PlayerSelect(players);
-            GameSquareSelect(Buttons, n, &turn);//checks where the user clicks on the board
-            DrawBoard(start_x_vert, start_y_vert, start_x_horiz, start_y_horiz, n); // draw the board
-            DrawText("Board Size",600,80,20,BLACK);
-            DrawText("Player Mode", 600,180,20,BLACK);
-
-            if(n == 3 && players[1].state == 1)
+            ///Highlight which Rounds were chosen
+            if(SelectRounds[0].state == 1)
             {
-                if(Difficulty[0].state == 1)
-                {
-                    EasyAI3(Buttons, n, &turn);
-                    DrawText("Easy", 300,300,20,BLACK);
-                }
-                if(Difficulty[1].state == 1)
-                {
-                    MedAI3(Buttons, n, &turn);
-                    DrawText("Medium", 300,300,20,BLACK);
-                }
-                if(Difficulty[2].state == 1)
-                {
-                    HardAI3(Buttons, n, &turn);
-                    DrawText("HARD", 300,300,20,BLACK);
-                }
+                DrawLineEx((Vector2){600,475}, (Vector2){685,475},5,GREEN);
             }
-            if(n == 4 && players[1].state == 1)
+            if(SelectRounds[1].state == 1)
             {
-                if(Difficulty[0].state == 1)
+                DrawLineEx((Vector2){712,475}, (Vector2){797,475},5,GREEN);
+            }
+            if(SelectRounds[2].state == 1)
+            {
+                DrawLineEx((Vector2){825,475}, (Vector2){910,475},5,GREEN);
+            }
+
+        ///Show what difficulty level was selected***********************
+            if(Difficulty[0].state == 1)
+            {
+                DrawText("Easy", 600,350,20,BLACK);
+            }
+            if(Difficulty[1].state == 1)
+            {
+                DrawText("Medium", 715,350,20,BLACK);
+            }
+            if(Difficulty[2].state == 1)
+            {
+                DrawText("Hard", 830,350,20,BLACK);
+            }
+
+        ///Conditions for Difficult level**********************************
+            SelectDifficulty(Difficulty);
+            if(players[1].state == 1 && winner == 4 && turn == 2)
+            {
+                if(n == 3)
                 {
-                    EasyAI4(Buttons, n, &turn);
-                    DrawText("EASY", 300,300,20,BLACK);
+                    if(Difficulty[0].state == 1)
+                    {
+                        EasyAI3(Buttons, n, &turn);
+                    }
+                    if(Difficulty[1].state == 1)
+                    {
+                        MedAI3(Buttons, n, &turn);
+                    }
+                    if(Difficulty[2].state == 1)
+                    {
+                        HardAI3(Buttons, n, &turn);
+                    }
                 }
-                if(Difficulty[1].state == 1)
+
+                if(n == 4)
                 {
-                    MedAI4(Buttons, n, &turn);
-                    DrawText("Medium", 300,300,20,BLACK);
-                }
-                if(Difficulty[2].state == 1)
-                {
-                    HardAI4(Buttons, n, &turn);
-                    DrawText("HARD", 300,300,20,BLACK);
+                    if(Difficulty[0].state == 1)
+                    {
+                        EasyAI4(Buttons, n, &turn);
+                        DrawText("EASY", 300,300,20,BLACK);
+                    }
+                    if(Difficulty[1].state == 1)
+                    {
+                        MedAI4(Buttons, n, &turn);
+                        DrawText("Medium", 300,300,20,BLACK);
+                    }
+                    if(Difficulty[2].state == 1)
+                    {
+                        HardAI4(Buttons, n, &turn);
+                        DrawText("HARD", 300,300,20,BLACK);
+                    }
                 }
             }
 
-
+        ///Show Difficulty Buttons if Bot was selected***********************
             if (players[1].state == 1)
             {
                 DrawText("Difficulty Level",600,270,20,BLACK);
@@ -212,10 +252,10 @@ int main()
             if (state == STATE_TOURNAMENT) // Round choice is only for Tournament
             {
                 DrawSelectRoundsButtons(SelectRounds);
-                DrawText("Select Number of Rounds",600,370,30,BLACK);
+                DrawText("Select Number of Rounds",600,380,20,BLACK);
             }
 
-            // Display Rounds and Scores on screen
+        /// Display Rounds and Scores on screen
             sprintf(roundText, "Round: %d", roundNumber);
             sprintf(scoreText, "Score - X: %d | O: %d", score1, score2);
             DrawText(roundText, 60, 600, 30, DARKGRAY);

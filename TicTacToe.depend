@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
 1794244419 source:c:\users\james\documents\github\tic-tac-toe\test.c
 
-1795547332 source:c:\users\james\documents\github\tic-tac-toe\main.c
+1795807724 source:c:\users\james\documents\github\tic-tac-toe\main.c
 	<stdio.h>
 	<stdlib.h>
 	<raylib.h>
@@ -10,6 +10,12 @@
 	"MouseClicks.h"
 	"Winner.h"
 	"ui.h"
+	"EasyAI3.h"
+	"EasyAI4.h"
+	"MedAI3.h"
+	"MedAI4.h"
+	"HardAI3.h"
+	"HardAI4.h"
 
 1795451727 c:\users\james\documents\github\tic-tac-toe\board.h
 	<raylib.h>
@@ -17,7 +23,7 @@
 1795375074 source:c:\users\james\documents\github\tic-tac-toe\board.c
 	<raylib.h>
 
-1795604790 source:c:\users\james\documents\github\tic-tac-toe\buttons.c
+1795807124 source:c:\users\james\documents\github\tic-tac-toe\buttons.c
 	<raylib.h>
 	"Buttons.h"
 
@@ -35,7 +41,7 @@
 	"Buttons.h"
 	"Board.h"
 
-1795545477 c:\users\james\documents\github\tic-tac-toe\mouseclicks.h
+1795605440 c:\users\james\documents\github\tic-tac-toe\mouseclicks.h
 
 1795545477 source:c:\users\james\documents\github\tic-tac-toe\winner.c
 	"Buttons.h"
@@ -43,7 +49,7 @@
 1795375074 c:\users\james\documents\github\tic-tac-toe\winner.h
 	"Buttons.h"
 
-1795438916 source:c:\users\james\documents\github\tic-tac-toe\ui.c
+1795807733 source:c:\users\james\documents\github\tic-tac-toe\ui.c
 	<raylib.h>
 	<stdio.h>
 	"ui.h"
@@ -288,7 +294,7 @@
 	"HardAI4.h"
 	"Board.h"
 
-1795794833 c:\users\james\documents\github\tic-tac-toe\hardai4.h
+1795795780 c:\users\james\documents\github\tic-tac-toe\hardai4.h
 	"Buttons.h"
 
 1795794020 source:c:\users\james\documents\github\tic-tac-toe\medai3.c
