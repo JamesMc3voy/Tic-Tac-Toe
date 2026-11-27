@@ -62,7 +62,7 @@ static int MedAI(const int board[16])
 
 
     int empty[16], count = 0;
-    for (int i = 0; i < 9; i++)
+    for (int i = 0; i < 16 ; i++)
         if (board[i] == 0) empty[count++] = i;
 
     return count ? empty[rand() % count] : -1;
