@@ -8,6 +8,12 @@
 #include "MouseClicks.h"
 #include "Winner.h"
 #include "ui.h"
+#include "EasyAI3.h"
+#include "EasyAI4.h"
+#include "MedAI3.h"
+#include "MedAI4.h"
+#include "HardAI3.h"
+#include "HardAI4.h"
 
 static void ResetMatchState(BoardSquares Buttons[], int n, int *turn, int *winner, int *score1, int *score2, int *roundNumber)
 {
@@ -148,6 +154,12 @@ int main()
             DrawBoard(start_x_vert, start_y_vert, start_x_horiz, start_y_horiz, n); // draw the board
             DrawText("Board Size",600,80,20,BLACK);
             DrawText("Player Mode", 600,180,20,BLACK);
+            //EasyAI3(Buttons, n, &turn);
+            //EasyAI4(Buttons, n, &turn);
+            MedAI3(Buttons, n, &turn);
+            MedAI4(Buttons, n, &turn);
+            //HardAI3(Buttons, n, &turn);
+          //  HardAI4(Buttons, n, &turn);
 
             if (players[1].state == 1)
             {

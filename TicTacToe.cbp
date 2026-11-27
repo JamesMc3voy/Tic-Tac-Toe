@@ -39,10 +39,30 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Buttons.h" />
-		<Unit filename="MinMaxAI.c">
+		<Unit filename="EasyAI3.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="MinMaxAI.h" />
+		<Unit filename="EasyAI3.h" />
+		<Unit filename="EasyAI4.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="EasyAI4.h" />
+		<Unit filename="HardAI3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="HardAI3.h" />
+		<Unit filename="HardAI4.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="HardAI4.h" />
+		<Unit filename="MedAI3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="MedAI3.h" />
+		<Unit filename="MedAI4.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="MedAI4.h" />
 		<Unit filename="MouseClicks.c">
 			<Option compilerVar="CC" />
 		</Unit>
