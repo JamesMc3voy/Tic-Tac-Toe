@@ -4,4 +4,4 @@
 
 void HardAI4(BoardSquares Buttons[], int n, int *turn);
 
-#endif // HArdAI4x4
+#endif // HardAI4x4
