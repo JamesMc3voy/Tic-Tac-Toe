@@ -157,9 +157,9 @@ int main()
             //EasyAI3(Buttons, n, &turn);
             //EasyAI4(Buttons, n, &turn);
             MedAI3(Buttons, n, &turn);
-            MedAI4(Buttons, n, &turn);
+            //MedAI4(Buttons, n, &turn);
             //HardAI3(Buttons, n, &turn);
-          //  HardAI4(Buttons, n, &turn);
+            HardAI4(Buttons, n, &turn);
 
             if (players[1].state == 1)
             {
